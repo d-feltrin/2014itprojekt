@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_iFJAIK7MEeO3RMD6gUTOmQ" name="model">
+  <packagedElement xmi:type="uml:Package" xmi:id="_kMKXAK7MEeO3RMD6gUTOmQ" name="FremdePinnwandAbonnieren">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_UoCsYK7NEeO3RMD6gUTOmQ" name="Fremde Nutzer auswaehlen"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_crkd8K7NEeO3RMD6gUTOmQ" name="Fremde Pinnwand abonnieren"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_izVi4K7MEeO3RMD6gUTOmQ" name="Benutzer"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fXtUEK7NEeO3RMD6gUTOmQ" name="A_benutzer_fremde nutzer auswaehlen" memberEnd="_fXtUEa7NEeO3RMD6gUTOmQ _fXtUFK7NEeO3RMD6gUTOmQ">
+    <ownedEnd xmi:id="_fXtUEa7NEeO3RMD6gUTOmQ" name="benutzer" type="_izVi4K7MEeO3RMD6gUTOmQ" association="_fXtUEK7NEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fXtUEq7NEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fXtUE67NEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_fXtUFK7NEeO3RMD6gUTOmQ" name="fremde nutzer auswaehlen" type="_UoCsYK7NEeO3RMD6gUTOmQ" association="_fXtUEK7NEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fXtUFa7NEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fXtUFq7NEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_f9HHMK7NEeO3RMD6gUTOmQ" name="A_benutzer_fremde pinnwand abonnieren" memberEnd="_f9HHMa7NEeO3RMD6gUTOmQ _f9HHNK7NEeO3RMD6gUTOmQ">
+    <ownedEnd xmi:id="_f9HHMa7NEeO3RMD6gUTOmQ" name="benutzer" type="_izVi4K7MEeO3RMD6gUTOmQ" association="_f9HHMK7NEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f9HHMq7NEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f9HHM67NEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_f9HHNK7NEeO3RMD6gUTOmQ" name="fremde pinnwand abonnieren" type="_crkd8K7NEeO3RMD6gUTOmQ" association="_f9HHMK7NEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f9HHNa7NEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f9HHNq7NEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_FiM5MK7OEeO3RMD6gUTOmQ" name="Benutzer"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HOPkQK7OEeO3RMD6gUTOmQ" name="FremdePinnwandStornieren">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_XWcW4K7OEeO3RMD6gUTOmQ" name="Fremde Pinnwand stornieren"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_szQcUK9TEeOx7bXKbuMLqQ" name="Fremde Pinnwand auswaehlen"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_iwpwYK7OEeO3RMD6gUTOmQ" name="A_benutzer_fremde pinnwand stornieren" memberEnd="_iwpwYa7OEeO3RMD6gUTOmQ _iwpwZK7OEeO3RMD6gUTOmQ">
+    <ownedEnd xmi:id="_iwpwYa7OEeO3RMD6gUTOmQ" name="benutzer" type="_FiM5MK7OEeO3RMD6gUTOmQ" association="_iwpwYK7OEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iwpwYq7OEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iwpwY67OEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_iwpwZK7OEeO3RMD6gUTOmQ" name="fremde pinnwand stornieren" type="_XWcW4K7OEeO3RMD6gUTOmQ" association="_iwpwYK7OEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iwpwZa7OEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iwpwZq7OEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_G8kwAK7PEeO3RMD6gUTOmQ" name="Kommentar liken">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_qB23sK7PEeO3RMD6gUTOmQ" name="Kommentar liken"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Tx1yQK7PEeO3RMD6gUTOmQ" name="Benutzer"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_zjatgK7PEeO3RMD6gUTOmQ" name="Kommentar disliken">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_5xCtYK7PEeO3RMD6gUTOmQ" name="Kommentar disliken"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_3sFzEK7PEeO3RMD6gUTOmQ" name="Benutzer"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_5IW8wK7PEeO3RMD6gUTOmQ" name="Actor"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_9JTCoK7PEeO3RMD6gUTOmQ" name="A_benutzer_kommentar disliken" memberEnd="_9JTCoa7PEeO3RMD6gUTOmQ _9JTCpK7PEeO3RMD6gUTOmQ">
+    <ownedEnd xmi:id="_9JTCoa7PEeO3RMD6gUTOmQ" name="benutzer" type="_3sFzEK7PEeO3RMD6gUTOmQ" association="_9JTCoK7PEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9JTCoq7PEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9JTCo67PEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_9JTCpK7PEeO3RMD6gUTOmQ" name="kommentar disliken" type="_5xCtYK7PEeO3RMD6gUTOmQ" association="_9JTCoK7PEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9JTCpa7PEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9JTCpq7PEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_-QYmgK7PEeO3RMD6gUTOmQ" name="A_benutzer_kommentar liken" memberEnd="_-QYmga7PEeO3RMD6gUTOmQ _-QYmhK7PEeO3RMD6gUTOmQ">
+    <ownedEnd xmi:id="_-QYmga7PEeO3RMD6gUTOmQ" name="benutzer" type="_Tx1yQK7PEeO3RMD6gUTOmQ" association="_-QYmgK7PEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-QYmgq7PEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-QYmg67PEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_-QYmhK7PEeO3RMD6gUTOmQ" name="kommentar liken" type="_qB23sK7PEeO3RMD6gUTOmQ" association="_-QYmgK7PEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-QYmha7PEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-QYmhq7PEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_EbKtwK7QEeO3RMD6gUTOmQ" name="Beitrag disliken">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_Kqv1cK7QEeO3RMD6gUTOmQ" name="Beitrag disliken"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_I57YEK7QEeO3RMD6gUTOmQ" name="Benutzer"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_pF6-cK7QEeO3RMD6gUTOmQ" name="A_benutzer_beitrag disliken" memberEnd="_pF6-ca7QEeO3RMD6gUTOmQ _pF6-dK7QEeO3RMD6gUTOmQ">
+    <ownedEnd xmi:id="_pF6-ca7QEeO3RMD6gUTOmQ" name="benutzer" type="_I57YEK7QEeO3RMD6gUTOmQ" association="_pF6-cK7QEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pF6-cq7QEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pF6-c67QEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_pF6-dK7QEeO3RMD6gUTOmQ" name="beitrag disliken" type="_Kqv1cK7QEeO3RMD6gUTOmQ" association="_pF6-cK7QEeO3RMD6gUTOmQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pF6-da7QEeO3RMD6gUTOmQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_pF6-dq7QEeO3RMD6gUTOmQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_dhwBIK9TEeOx7bXKbuMLqQ" name="Beitrag liken">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_lQjf4K9TEeOx7bXKbuMLqQ" name="Beitrag liken"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_jBNTcK9TEeOx7bXKbuMLqQ" name="Benutzer"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ntbK8K9TEeOx7bXKbuMLqQ" name="A_benutzer_beitrag liken" memberEnd="_ntbK8a9TEeOx7bXKbuMLqQ _ntbK9K9TEeOx7bXKbuMLqQ">
+    <ownedEnd xmi:id="_ntbK8a9TEeOx7bXKbuMLqQ" name="benutzer" type="_jBNTcK9TEeOx7bXKbuMLqQ" association="_ntbK8K9TEeOx7bXKbuMLqQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ntbK8q9TEeOx7bXKbuMLqQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ntbK869TEeOx7bXKbuMLqQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ntbK9K9TEeOx7bXKbuMLqQ" name="beitrag liken" type="_lQjf4K9TEeOx7bXKbuMLqQ" association="_ntbK8K9TEeOx7bXKbuMLqQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ntbK9a9TEeOx7bXKbuMLqQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ntbK9q9TEeOx7bXKbuMLqQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vfqYMK9TEeOx7bXKbuMLqQ" name="A_benutzer_fremde pinnwand auswaehlen" memberEnd="_vfqYMa9TEeOx7bXKbuMLqQ _vfqYNK9TEeOx7bXKbuMLqQ">
+    <ownedEnd xmi:id="_vfqYMa9TEeOx7bXKbuMLqQ" name="benutzer" type="_FiM5MK7OEeO3RMD6gUTOmQ" association="_vfqYMK9TEeOx7bXKbuMLqQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vfqYMq9TEeOx7bXKbuMLqQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vfqYM69TEeOx7bXKbuMLqQ" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_vfqYNK9TEeOx7bXKbuMLqQ" name="fremde pinnwand auswaehlen" type="_szQcUK9TEeOx7bXKbuMLqQ" association="_vfqYMK9TEeOx7bXKbuMLqQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vfqYNa9TEeOx7bXKbuMLqQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vfqYNq9TEeOx7bXKbuMLqQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

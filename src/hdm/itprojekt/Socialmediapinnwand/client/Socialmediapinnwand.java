@@ -145,6 +145,8 @@ public class Socialmediapinnwand implements EntryPoint {
 		}
 
 		// Add a handler to send the name to the server
+		gvdgdgd
+		gsdgdsg
 		MyHandler handler = new MyHandler();
 		sendButton.addClickHandler(handler);
 		nameField.addKeyUpHandler(handler);

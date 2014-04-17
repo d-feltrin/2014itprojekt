@@ -4,10 +4,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.User;
 
-public interface Sm4sAdministrationAsync {
+public interface AServiceAsync {
 
-	void createUser(
-			String firstname,
-			AsyncCallback<hdm.itprojekt.Socialmediapinnwand.shared.bo.User> callback);
+	void insertUser(User u, AsyncCallback<Void> callback);
 	
 }

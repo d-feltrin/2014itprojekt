@@ -1,8 +1,11 @@
 package hdm.itprojekt.Socialmediapinnwand.shared.bo;
 
+import java.io.Serializable;
+
 //Die Superklasse BusinessObject gibt das Attribut und die Methoden für eindeutige ID's
 //der Objekte vor
-public class BusinessObject {
+public class BusinessObject implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	//Folgende Attribute sollen in der Klasse vorhanden sein
 	private int id;

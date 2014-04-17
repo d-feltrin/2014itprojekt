@@ -1,6 +1,7 @@
 package hdm.itprojekt.Socialmediapinnwand.shared.bo;
 
 public class User extends BusinessObject {
+	private static final long serialVersionUID = 1L;
 
 	//Folgende Attribute benötigt die Klasse User, um einen User laut Anforderungen
 	//beschreiben zu können
@@ -14,10 +15,10 @@ public class User extends BusinessObject {
 	//Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
 	//wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
 	//Muss sie hier dann überhaupt reingeschrieben werden?
-	@Override
-	public void setId(int id) {
-		super.setId(id);
-	}
+	
+	//public void setId(int id) {
+	//	super.setId(id);
+	//}
 
 	//Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
 	//wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
@@ -28,7 +29,8 @@ public class User extends BusinessObject {
 	}
 
 	//Methode, um den Vornamen eines Users zu setzen
-	public void setVorname(String vorname){
+	public void setVorname(String uvorname){
+		vorname = uvorname;
 		
 	}
 	
@@ -38,7 +40,8 @@ public class User extends BusinessObject {
 	}
 	
 	//Methode, um den Nachnamen eines Users zu setzen
-	public void setNachname(String nachname){
+	public void setNachname(String unachname){
+		nachname = unachname;
 		
 	}
 	
@@ -48,7 +51,8 @@ public class User extends BusinessObject {
 	}
 	
 	//Methode, um den Nickname eines Users zu setzen
-	public void setNickname(String nickname){
+	public void setNickname(String unickname){
+		nickname = unickname;
 		
 	}
 	
@@ -58,7 +62,8 @@ public class User extends BusinessObject {
 	}
 	
 	//Methode, um die E-Mail Adresse eines Users zu setzen
-	public void setEMailAdress(String eMailAdress){
+	public void setEMailAdress(String ueMailAdress){
+		eMailAdress = ueMailAdress;
 		
 	}
 	
@@ -68,7 +73,9 @@ public class User extends BusinessObject {
 	}
 	
 	//Methode, um das Passwort eines Nutzers zu setzen
-	public void setPassword(String password){
+	public void setPassword(String upassword){
+		password = upassword;
+		
 		
 	}
 	

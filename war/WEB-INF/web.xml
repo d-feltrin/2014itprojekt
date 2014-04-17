@@ -6,8 +6,17 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   
-     
+      <servlet>
+    <servlet-name>AServiceImpl</servlet-name>
+    <servlet-class>hdm.itprojekt.Socialmediapinnwand.server.AServiceImpl</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+    <servlet-name>AServiceImpl</servlet-name>
+    <url-pattern>/socialmediapinnwand/asyncservice</url-pattern>
+  </servlet-mapping>
+  
+ 
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>Socialmediapinnwand.html</welcome-file>

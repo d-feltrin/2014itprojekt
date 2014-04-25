@@ -3,8 +3,8 @@ package hdm.itprojekt.Socialmediapinnwand.shared.bo;
 public class User extends BusinessObject {
 	private static final long serialVersionUID = 1L;
 
-	//Folgende Attribute benötigt die Klasse User, um einen User laut Anforderungen
-	//beschreiben zu können
+	/*Folgende Attribute benötigt die Klasse User, um einen User laut Anforderungen
+	beschreiben zu können*/
 	private String vorname;
 	private String nachname;
 	private String nickname;
@@ -12,17 +12,17 @@ public class User extends BusinessObject {
 	private String password;
 	private int anzahlFremderAbonnenten;
 	
-	//Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
-	//wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
-	//Muss sie hier dann überhaupt reingeschrieben werden?
+	/*Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
+	*wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
+	*Muss sie hier dann überhaupt reingeschrieben werden?*/
 	
 	//public void setId(int id) {
 	//	super.setId(id);
 	//}
 
-	//Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
-	//wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
-	//Muss sie hier dann überhaupt reingeschrieben werden?
+	/*Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
+	*wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
+	Muss sie hier dann überhaupt reingeschrieben werden?*/
 	@Override
 	public int getId() {
 		return super.getId();
@@ -31,7 +31,6 @@ public class User extends BusinessObject {
 	//Methode, um den Vornamen eines Users zu setzen
 	public void setVorname(String uvorname){
 		vorname = uvorname;
-		
 	}
 	
 	//Methode, um den Vornamen eines Users zu erhalten
@@ -42,7 +41,6 @@ public class User extends BusinessObject {
 	//Methode, um den Nachnamen eines Users zu setzen
 	public void setNachname(String unachname){
 		nachname = unachname;
-		
 	}
 	
 	//Methode, um den Nachnamen eines Users zu erhalten
@@ -53,7 +51,6 @@ public class User extends BusinessObject {
 	//Methode, um den Nickname eines Users zu setzen
 	public void setNickname(String unickname){
 		nickname = unickname;
-		
 	}
 	
 	//Methode, um den Nickname eines Users zu erhalten
@@ -64,7 +61,6 @@ public class User extends BusinessObject {
 	//Methode, um die E-Mail Adresse eines Users zu setzen
 	public void setEMailAdress(String ueMailAdress){
 		eMailAdress = ueMailAdress;
-		
 	}
 	
 	//Methode, um die E-Mail Adresse eines Users zu erhalten
@@ -74,9 +70,7 @@ public class User extends BusinessObject {
 	
 	//Methode, um das Passwort eines Nutzers zu setzen
 	public void setPassword(String upassword){
-		password = upassword;
-		
-		
+		password = upassword;		
 	}
 	
 	//Methode, um das Passwort eines Nutzers zu erhalten

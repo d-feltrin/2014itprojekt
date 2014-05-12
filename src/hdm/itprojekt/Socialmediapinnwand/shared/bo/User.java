@@ -10,6 +10,7 @@ public class User extends BusinessObject {
 	private String nickname;
 	private String eMailAdress;
 	private String password;
+	private int user_id;
 	private int anzahlFremderAbonnenten;
 	
 	/*Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
@@ -26,6 +27,14 @@ public class User extends BusinessObject {
 	@Override
 	public int getId() {
 		return super.getId();
+	}
+	
+	public int getUserId() {
+		return user_id;
+	}
+	
+	public void setUserId(int user_id) {
+		this.user_id = user_id;
 	}
 
 	//Methode, um den Vornamen eines Users zu setzen
@@ -81,6 +90,11 @@ public class User extends BusinessObject {
 	//Methode, um die Anzahl fremder Pinnwand-Abonnenten zu erhalten
 	public int getAnzahlFremderAbonnenten(){
 		return anzahlFremderAbonnenten;
+	}
+
+	public void setDozentID(int int1) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -1,6 +1,7 @@
 package hdm.itprojekt.Socialmediapinnwand.client;
 
 import hdm.itprojekt.Socialmediapinnwand.client.CreateUser;
+import hdm.itprojekt.Socialmediapinnwand.client.CreatePost;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -16,7 +17,7 @@ public class Socialmediapinnwand implements EntryPoint {
 	
 	final VerticalPanel contentPanel = new VerticalPanel();
 	final Button TestButton = new Button ("Test");
-	 
+	
 	final MenuBar 	UserMainMenu = new MenuBar();
 
 	public void onModuleLoad() {
@@ -70,10 +71,10 @@ public class Socialmediapinnwand implements EntryPoint {
 				//Dem RootPanel die Menubar zuordnen
 				RootPanel.get("head_wrap_right").add(UserMainMenu);
 				
-		/* Test Button
+		
 					TestButton.addClickHandler(new ClickHandler(){
 						public void onClick(ClickEvent event){
-									CreateUser newUser = new CreateUser();
+							CreateUser newUser = new CreateUser();
 									RootPanel.get("content_wrap_right").clear();
 									RootPanel.get("content_wrap_right").add(newUser);
 						}
@@ -81,7 +82,15 @@ public class Socialmediapinnwand implements EntryPoint {
 
 					RootPanel.get("content_wrap_right").add(contentPanel);
 					RootPanel.get("content_wrap_right").add(TestButton);
-					*/
+					
+					CreatePost CrPost = new CreatePost();
+					RootPanel.get("content_wrap_right").clear();
+					RootPanel.get("content_wrap_right").add(CrPost);
+					
+					
+					
+					
+					
 				
 					}
 		}

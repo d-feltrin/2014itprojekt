@@ -1,7 +1,11 @@
 package hdm.itprojekt.Socialmediapinnwand.server.db;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+
+
 
 
 
@@ -44,5 +48,28 @@ public void insertUser(User u) {
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
+}
+public ArrayList<User> getAllUsers() {
+	Connection con = DBConnection.connection();
+	ArrayList<User> resultList = new ArrayList<>();
+
+	try {
+		Statement state = con.createStatement();
+		ResultSet ergebnis = state.executeQuery("SELECT * FROM User");
+
+		while (ergebnis.next()) {
+			User u = new User(); // Create new person-object to fill
+										// with values from database
+			u.setDozentID(ergebnis.getInt("DozentID"));
+			u.setVorname(ergebnis.getString("Vorname"));
+			u.setNachname(ergebnis.getString("Nachname"));
+			resultList.add(u); // Add person-object to Arraylist
+		}
+
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+	return resultList;
 }
 }

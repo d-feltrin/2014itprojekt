@@ -24,17 +24,14 @@ public class User extends BusinessObject {
 	/*Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
 	*wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
 	Muss sie hier dann überhaupt reingeschrieben werden?*/
-	@Override
-	public int getId() {
-		return super.getId();
-	}
+	
 	
 	public int getUserId() {
 		return user_id;
 	}
 	
-	public void setUserId(int user_id) {
-		this.user_id = user_id;
+	public void setUserId(int uuser_id) {
+		user_id = uuser_id;
 	}
 
 	//Methode, um den Vornamen eines Users zu setzen

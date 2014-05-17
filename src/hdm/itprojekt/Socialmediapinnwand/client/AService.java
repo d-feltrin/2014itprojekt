@@ -1,4 +1,4 @@
-package hdm.itprojekt.Socialmediapinnwand.shared;
+package hdm.itprojekt.Socialmediapinnwand.client;
 
 import java.util.ArrayList;
 
@@ -19,6 +19,6 @@ public interface AService extends RemoteService {
 	
 	ArrayList<User> getAllUsers() throws IllegalArgumentException;
 
-	User checkLogin(String userNamelogin, String userPasswordLogin);
+	User checkLogin(String nicknameBoxUser, String pwBoxUser);
 	
 }

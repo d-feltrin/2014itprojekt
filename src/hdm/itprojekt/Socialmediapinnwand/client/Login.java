@@ -1,90 +1,111 @@
 package hdm.itprojekt.Socialmediapinnwand.client;
 
-import hdm.itprojekt.Socialmediapinnwand.shared.AService;
-import hdm.itprojekt.Socialmediapinnwand.shared.AServiceAsync;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.User;
+import hdm.itprojekt.Socialmediapinnwand.client.CreateUser;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
-import com.google.gwt.user.client.ui.VerticalPanel;
 
+public class Login extends HorizontalPanel {
 
+	private final AServiceAsync AsyncObj = GWT.create(AService.class);
 
-public class Login extends HorizontalPanel  {
-  
- private final AServiceAsync AsyncObj = GWT.create(AService.class);
+	private final HorizontalPanel loginBox = new HorizontalPanel();
 
+	public Login() {
+	}
 
-	
-  private final HorizontalPanel loginBox = new HorizontalPanel();
-  
-  public void onLoad()  {
-  
-  final TextBox nicknameBox = new TextBox();
-  final PasswordTextBox pwBox = new PasswordTextBox();
-  ListBox  ListOfSystems = new ListBox();
-  ListOfSystems.addItem("Editor");
-  ListOfSystems.addItem("Login");
- // ListOfSystems.setSize("70px", "35px");
-  Button editorLogin = new Button("Login");
- 
-  loginBox.add(nicknameBox);
-  loginBox.add(pwBox);
- 
-  loginBox.add(ListOfSystems);
-  loginBox.add(editorLogin);
-  
-	this.add(loginBox);
+	public void onLoad() {
+		// ListBox ListOfSystems = new ListBox();
+		// ListOfSystems.addItem("Editor");
+		// ListOfSystems.addItem("Login");
+		// ListOfSystems.setSize("70px", "35px");
+		final TextBox nicknameBox = new TextBox();
+		final PasswordTextBox pwBox = new PasswordTextBox();
+		final Button RegisterButton = new Button("Registrieren");
+		final Button LoginButton = new Button("Login");
 
-	
-	
-	editorLogin.addClickHandler(new ClickHandler() {
+		nicknameBox.setText("Nickname");
+		nicknameBox.setStylePrimaryName("LoginNicknameBox");
 
-		 public void onClick(ClickEvent event) {
-			 
-			       AsyncObj.checkLogin(nicknameBox.getValue(), pwBox.getValue(),
-		    		   new AsyncCallback<User>() {
-							@Override
-							public void onFailure(Throwable caught) {
-								Window.alert("Fehler");
-							}
- 
+		pwBox.setText("Password");
+		pwBox.setStylePrimaryName("LoginPaswordBox");
 
-							@Override
-							public void onSuccess(User result) {
-								
-								if (result.getUserId() != 0) {
-									Window.alert("FUT");
+		loginBox.add(nicknameBox);
+		loginBox.add(pwBox);
+		loginBox.setStylePrimaryName("head_wrap_middle");
+
+		// loginBox.add(ListOfSystems);
+		loginBox.add(LoginButton);
+		loginBox.add(RegisterButton);
+		// RegisterButton.setStylePrimaryName("RegisterButton");
+		LoginButton.setStylePrimaryName("loginButton");
+
+		RegisterButton.addClickHandler(new ClickHandler() {
+
+			@Override
+			public void onClick(ClickEvent event) {
+				RootPanel.get("content_wrap").clear();
+
+				RootPanel.get("head_wrap_right").clear();
+				CreateUser CrUser = new CreateUser();
+				RootPanel.get("content_wrap").add(CrUser);
+
+			}
+
+		});
+		this.add(loginBox);
+
+		LoginButton.addClickHandler(new ClickHandler() {
+
+			public void onClick(ClickEvent event) {
+				if (nicknameBox.getValue().isEmpty()
+						|| pwBox.getValue().isEmpty()) {
+					Window.alert("Bitte Nickname und Passwort ausfüllen");
+				} else {
+					AsyncObj.checkLogin(nicknameBox.getValue(),
+							pwBox.getValue(), new AsyncCallback<User>() {
+								@Override
+								public void onSuccess(User result) {
+
+									if (result.getUserId() != 0) {
+										Socialmediapinnwand_entry dashboard = new Socialmediapinnwand_entry();
+										dashboard.setUserObject(result);
+										RootPanel.get("content_wrap").clear();
+										RootPanel.get("head_wrap_middle")
+												.clear();
+										RootPanel.get("head_wrap_right")
+												.clear();
+										RootPanel.get("content_wrap").add(
+												dashboard);
+										Cookies.setCookie("SM4S",
+												result.getNickname());
+
+									}
+
 								}
-					 
-								 
-								
-							}
-					  });
-			  
-							  }
-					  });
+
+								@Override
+								public void onFailure(Throwable caught) {
+									Window.alert("Fehler");
+								}
+
+							});
+
+				}
+			}
+		});
+	}
+
 }
- 
-}
-
-
- 
-	
-	
-	
-	
-	 
- 
-	
-   
-
-

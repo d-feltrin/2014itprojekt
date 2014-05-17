@@ -2,17 +2,14 @@ package hdm.itprojekt.Socialmediapinnwand.server;
 
 import java.util.ArrayList;
 
+import hdm.itprojekt.Socialmediapinnwand.client.AService;
 import hdm.itprojekt.Socialmediapinnwand.server.db.*;
-import hdm.itprojekt.Socialmediapinnwand.shared.AService;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.Post;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.User;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-
-
-public class AServiceImpl extends RemoteServiceServlet implements AService
-{
+public class AServiceImpl extends RemoteServiceServlet implements AService {
 
 	private UserMapper uMapper = null;
 	private PostMapper pMapper = null;
@@ -27,10 +24,10 @@ public class AServiceImpl extends RemoteServiceServlet implements AService
 		this.lMapper = LoginMapper.loginMapper();
 
 	}
+
 	private static final long serialVersionUID = 1L;
-	
-	public void insertUser(User u)
-	{
+
+	public void insertUser(User u) {
 		init();
 		uMapper.insertUser(u);
 	}
@@ -39,19 +36,24 @@ public class AServiceImpl extends RemoteServiceServlet implements AService
 	public void insertPost(Post p) {
 		init();
 		pMapper.insertPost(p);
-		
+
 	}
 
 	@Override
 	public ArrayList<User> getAllUsers() throws IllegalArgumentException {
-		// TODO Auto-generated method stub
-		return null;
+		init();
+		ArrayList<User> listit = uMapper.getAllUsers();
+		if (!listit.isEmpty()) {
+			return listit;
+		} else {
+			return null;
+		}
 	}
 
-	@Override
-	public User checkLogin(String userNamelogin, String userPasswordLogin) {
+	public User checkLogin(String nicknameBoxUser, String pwBoxUser) {
 		init();
-		User u = lMapper.checkLogin(userNamelogin, userPasswordLogin);
+		User u = new User();
+		u = lMapper.checkLogin(nicknameBoxUser, pwBoxUser);
 
 		if (u != null) {
 			return u;
@@ -59,4 +61,4 @@ public class AServiceImpl extends RemoteServiceServlet implements AService
 			return null;
 		}
 	}
-	}
+}

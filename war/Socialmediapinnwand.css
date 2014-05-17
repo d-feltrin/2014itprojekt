@@ -1,13 +1,15 @@
 
-
- *{ margin-left:auto; margin-right:auto; font-family:Arial, Helvetica, sans-serif;}
+*{ margin-left:auto; margin-right:auto; font-family:Arial, Helvetica, sans-serif;}
  body{ background-color:#f3f3f3;}
  
 #wrap{   min-height: 800px;
     width: 960px;  }
 
 /*head wrap*/
-#head_wrap{background-color:#f3f3f3;}
+#head_wrap{background-color: #f3f3f3;
+width: 100%;
+background-image: url(img/logo_bg.jpg);
+height: 68px;}
 #head_wrap_left{ background-image: url(img/logo_bg.jpg); background-repeat:repeat-x;       width: 230px; height: 48px;  padding-top: 20px; padding-left:30px; border-right:4px solid #FFF; float:left;  }
 #head_wrap_left a, img{ text-decoration:none; border:none;  }
 
@@ -20,31 +22,31 @@ width: 40%;
 #head_wrap_right{height: 48px;
 width: auto;
  float:right; }
-
+.gwt-ListBox mainmenu-dropdown{ line-height:25px;}
 
 /*content wrap*/
 #content_wrap{ clear:both;}
 
 /*content wrap left*/
 #content_wrap_left{
-	width: 260px; height: auto; 
-	float:left;
+ width: 260px; height: auto; 
+ float:left;
  
-	}
-	
-	/*Profilbox Klassen*/
-	#profilbox{
-	text-align:center;
-		width: 245px; height: 225px; padding-top:25px;  padding-left:15px;
-		background-color:#fff;       margin-bottom: 5px;
-		}
-		
-	.profilbild{ }	
-	.profilbild_headline{ 	font-size:34px; }
-	.profilbild_subline{ 	font-size:18px;}	
-		
-	/*Profilbox Klassen*/
-	#actionbox{	  background-color: #FFFFFF;
+ }
+ 
+ /*Profilbox Klassen*/
+ #profilbox{
+ text-align:center;
+  width: 245px; height: 225px; padding-top:25px;  padding-left:15px;
+  background-color:#fff;       margin-bottom: 5px;
+  }
+  
+ .profilbild{ } 
+ .profilbild_headline{  font-size:34px; }
+ .profilbild_subline{  font-size:18px;} 
+  
+ /*Profilbox Klassen*/
+ #actionbox{   background-color: #FFFFFF;
     height: 100%;
     text-align: left;
     width: 260px; margin-bottom:5px;  }
@@ -55,8 +57,8 @@ width: auto;
     height: 100%;  width: 260px;
     text-align: left;
     width: 260px  margin-bottom:5px; }
-	
-	#subsbox ul , #actionbox ul{ margin-bottom:0px; }
+ 
+ #subsbox ul , #actionbox ul{ margin-bottom:0px; }
 
 /*content wrap right*/
 #content_wrap_right{      background: none repeat scroll 0 0 #FFFFFF;
@@ -66,9 +68,9 @@ width: auto;
     width: 695px;;}     
 #postnowbox{    font-size: 13px;
     line-height: 30px;  width: 80%; border:1px solid #ccc;}
-	.postnowbox_headline{ 	font-size:12 px; line-height:35px; padding-left:15px; background-color:#f3f3f3; border-bottom:1px solid #ccc; soid;  }
-	.postnowbox_content{ 	font-size:18px; height:100%; min-height:200px; background:#fff;}
-	.postnowbox_submit_button{ 	   background: none repeat scroll 0 0 #333333;
+ .postnowbox_headline{  font-size:12 px; line-height:35px; padding-left:15px; background-color:#f3f3f3; border-bottom:1px solid #ccc; soid;  }
+ .postnowbox_content{  font-size:18px; height:100%; min-height:200px; background:#fff;}
+ .postnowbox_submit_button{     background: none repeat scroll 0 0 #333333;
     color: #FFFFFF;
     float: right;
     font-size: 12px;
@@ -76,9 +78,34 @@ width: auto;
     padding: 5px;
     text-align: center;
     width: 111px;
-	}
-	
+ }
+ 
 #postoverviewbox{}
 
 /*footer wrap*/
 #footer_wrap{  width: 960px;  height:46px; clear: both;}
+
+.LoginNicknameBox { width: 105px; height:18px; margin-right: 5px; margin-top:2px;}
+.LoginPaswordBox { width: 105px; height:18px; margin-top:2px;}
+.loginButton {
+	 background: none repeat scroll 0 0 #333333;
+    color: #FFFFFF;;
+    float: right;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 5px;
+    text-align: center;
+    width: 111px;
+    margin-right:5px;
+}
+.RegisterButton {
+	 background: none repeat scroll 0 0 #333333;
+    color: #FFFFFF;;
+    float: right;
+    font-size: 10px;
+    line-height: 12px;
+    padding: 5px;
+    text-align: center;
+    width: 111px;
+    margin-right:5px;
+}

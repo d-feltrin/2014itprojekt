@@ -27,7 +27,6 @@ public static UserMapper userMapper() {
 	return userMapper;
 }
 
-
 public void insertUser(User u) {
 	Connection con = DBConnection.connection();
 	try {

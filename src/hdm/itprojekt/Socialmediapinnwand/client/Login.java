@@ -38,6 +38,7 @@ public class Login extends HorizontalPanel {
 
 		nicknameBox.setText("Nickname");
 		nicknameBox.setStylePrimaryName("LoginNicknameBox");
+		nicknameBox.setFocus(true);
 
 		pwBox.setText("Password");
 		pwBox.setStylePrimaryName("LoginPaswordBox");
@@ -56,11 +57,11 @@ public class Login extends HorizontalPanel {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				RootPanel.get("content_wrap").clear();
+				RootPanel.get("content_wrap_right").clear();
 
 				RootPanel.get("head_wrap_right").clear();
 				CreateUser CrUser = new CreateUser();
-				RootPanel.get("content_wrap").add(CrUser);
+				RootPanel.get("content_wrap_right").add(CrUser);
 
 			}
 
@@ -82,16 +83,16 @@ public class Login extends HorizontalPanel {
 									if (result.getUserId() != 0) {
 										Socialmediapinnwand_entry dashboard = new Socialmediapinnwand_entry();
 										dashboard.setUserObject(result);
-										RootPanel.get("content_wrap").clear();
+										RootPanel.get("content_wrap_right").clear();
 										RootPanel.get("head_wrap_middle")
 												.clear();
 										RootPanel.get("head_wrap_right")
 												.clear();
-										RootPanel.get("content_wrap").add(
+										RootPanel.get("content_wrap_right").add(
 												dashboard);
 										Cookies.setCookie("SM4S",
 												result.getNickname());
-
+										
 									}
 
 								}

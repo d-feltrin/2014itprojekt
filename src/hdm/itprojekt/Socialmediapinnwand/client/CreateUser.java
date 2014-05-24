@@ -49,9 +49,10 @@ public class CreateUser extends VerticalPanel {
 		vertPanel.add(userEmail);
 		vertPanel.add(userPassword);
 
-		// Dem RootPanel ein Panel und einen Button zuordnen
-		// (Muss noch angepasst werden, da wir am Schluss noch mehr Funktionen
-		// haben)
+		/*
+		 * Dem RootPanel ein Panel und einen Button zuordnen
+		 * (Muss noch angepasst werden, da wir am Schluss noch mehr Funktionen haben)
+		 */
 		RootPanel.get("content_wrap").clear();
 		RootPanel.get("content_wrap").add(vertPanel);
 		RootPanel.get("content_wrap").add(userRegister);
@@ -63,8 +64,7 @@ public class CreateUser extends VerticalPanel {
 			
 
 			
-			// Der ClickHandler erstellt ein neues User-Objekt mit
-			// entsprechenden Werten aus den Widgets
+			// Der ClickHandler erstellt ein neues User-Objekt mit entsprechenden Werten aus den Widgets
 			public void onClick(ClickEvent event) {
 				if(userVorname.getValue().isEmpty() ||
 						userNachname.getValue().isEmpty() ||
@@ -80,8 +80,7 @@ public class CreateUser extends VerticalPanel {
 				u.setEMailAdress(userEmail.getValue());
 				u.setPassword(userPassword.getValue());
 
-				// Implementierung der Asynchronit�t des Callbacks f�r den
-				// insert-Befehl
+				// Implementierung der Asynchronit�t des Callbacks f�r den insert-Befehl
 				AsyncObj.insertUser(u, new AsyncCallback<Void>() {
 					@Override
 					// Anzeige bei fehlerhaftem insert-Befehl

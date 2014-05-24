@@ -10,8 +10,20 @@
 width: 100%;
 background-image: url(img/logo_bg.jpg);
 height: 68px;}
-#head_wrap_left{ background-image: url(img/logo_bg.jpg); background-repeat:repeat-x;       width: 230px; height: 48px;  padding-top: 20px; padding-left:30px; border-right:4px solid #FFF; float:left;  }
-#head_wrap_left a, img{ text-decoration:none; border:none;  }
+#head_wrap_left{
+	background-image: url(img/logo_bg.jpg);
+	background-repeat:repeat-x;
+	width: 230px; height: 48px;
+	padding-top: 20px;
+	padding-left:30px;
+	border-right:4px solid #FFF;
+	float:left;
+	}
+	
+#head_wrap_left a, img{
+	text-decoration:none;
+	border:none;
+	}
 
 
 #head_wrap_middle{ 
@@ -29,9 +41,17 @@ width: auto;
 
 /*content wrap left*/
 #content_wrap_left{
+	max-width:230px;
+	padding-top: 20px;
+	padding-left:30px;
+	border-right:4px solid #FFF;
+	float:left;
+ }
+ 
+ /*content wrap right*/
+#content_wrap_right{
  width: 260px; height: auto; 
  float:left;
- 
  }
  
  /*Profilbox Klassen*/

@@ -22,7 +22,6 @@ public static PostMapper postMapper() {
 	return postMapper;
 }
 
-
 public void insertPost(Post p) {
 	Connection con = DBConnection.connection();
 	try {
@@ -37,6 +36,5 @@ public void insertPost(Post p) {
 		e.printStackTrace();
 	}
 }
-
 
 }

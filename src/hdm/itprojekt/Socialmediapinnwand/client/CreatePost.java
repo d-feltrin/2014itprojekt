@@ -6,6 +6,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
@@ -24,7 +25,8 @@ public class CreatePost extends VerticalPanel {
 	// Wie kann man das hier bezeichnen?
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
 	private Post p;
-
+	private final String getActuallyUserNickname = Cookies.getCookie("SM4S");
+	
 	private final VerticalPanel vertPanel = new VerticalPanel();
 
 	public void onLoad() {
@@ -33,7 +35,7 @@ public class CreatePost extends VerticalPanel {
 		post.setCharacterWidth(80);
 		post.setVisibleLines(10);
 		post.setStylePrimaryName("postnowbox_content");
-
+		
 		// Widgets dem Panel zuordnen
 		vertPanel.add(post);
 		RootPanel.get("content_wrap").add(vertPanel);
@@ -41,10 +43,11 @@ public class CreatePost extends VerticalPanel {
 		
 		lbPost.setStylePrimaryName("postnowbox_headline");
 
-		// Dem RootPanel ein Panel und einen Button zuordnen
-		// (Muss noch angepasst werden, da wir am Schluss noch mehr Funktionen
-		// haben)
-		
+		/**
+		 * Dem RootPanel ein Panel und einen Button zuordnen
+		 * (Muss noch angepasst werden, da wir am Schluss noch mehr Funktionen
+		 * haben)
+		 */		
 
 		submitPost.setStylePrimaryName("postnowbox_submit_button");
 		
@@ -53,8 +56,7 @@ public class CreatePost extends VerticalPanel {
 		// Dem Benutzerbutton einen ClickHandler zuordnen
 		submitPost.addClickHandler(new ClickHandler() {
 
-			// Der ClickHandler erstellt ein neues User-Objekt mit
-			// entsprechenden Werten aus den Widgets
+			// Der ClickHandler erstellt ein neues User-Objekt mit entsprechenden Werten aus den Widgets
 			public void onClick(ClickEvent event) {
 				if (post.getValue().isEmpty()) {
 					Window.alert("Bitte gebe deinen Post ein");
@@ -63,8 +65,7 @@ public class CreatePost extends VerticalPanel {
 					p = new Post();
 					p.setPost(post.getValue());
 
-					// Implementierung der Asynchronität des Callbacks für den
-					// insert-Befehl
+					// Implementierung der Asynchronität des Callbacks für den insert-Befehl
 					AsyncObj.insertPost(p, new AsyncCallback<Void>() {
 						@Override
 						// Anzeige bei fehlerhaftem insert-Befehl
@@ -76,7 +77,7 @@ public class CreatePost extends VerticalPanel {
 						// Anzeige bei erfolgreichem insert-Befehl
 						public void onSuccess(Void result) {
 							Window.alert("Erfolgreich gepostet!");
-
+							
 						}
 					});
 				}
@@ -84,4 +85,3 @@ public class CreatePost extends VerticalPanel {
 		});
 	}
 }
-

@@ -20,5 +20,4 @@ public class BusinessObject implements Serializable {
 		return id;
 	}
 	
-	
 }

@@ -15,7 +15,7 @@ public interface AService extends RemoteService {
 
 	void insertUser(User u);
 
-	void insertPost(Post p);
+	void insertPost(Post p, int userPostId);
 	
 	ArrayList<User> getAllUsers() throws IllegalArgumentException;
 

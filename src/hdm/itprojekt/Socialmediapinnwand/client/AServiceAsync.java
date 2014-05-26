@@ -8,7 +8,7 @@ public interface AServiceAsync {
 
 	void insertUser(User u, AsyncCallback<Void> callback);
 	
-	void insertPost(Post p, AsyncCallback<Void> callback);
+	void insertPost(Post p, int userPostId, AsyncCallback<Void> callback);
 
 	void getAllUsers(AsyncCallback<ArrayList<User>> callback)
 			throws IllegalArgumentException;

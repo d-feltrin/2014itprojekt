@@ -33,9 +33,10 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 	}
 
 	@Override
-	public void insertPost(Post p) {
+	public void insertPost(Post p, int userPostId) {
 		init();
-		pMapper.insertPost(p);
+		System.out.println("insertPost in Imple... p: "+p+" userPostid: "+userPostId);
+		pMapper.insertPost(p, userPostId);
 
 	}
 

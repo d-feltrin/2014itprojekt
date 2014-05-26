@@ -11,8 +11,6 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
@@ -22,6 +20,7 @@ public class Login extends HorizontalPanel {
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
 
 	private final HorizontalPanel loginBox = new HorizontalPanel();
+	
 
 	public Login() {
 	}
@@ -72,15 +71,20 @@ public class Login extends HorizontalPanel {
 			public void onClick(ClickEvent event) {
 				if (nicknameBox.getValue().isEmpty()
 						|| pwBox.getValue().isEmpty()) {
-					Window.alert("Bitte Nickname und Passwort ausfüllen");
+					Window.alert("Bitte Nickname und Passwort ausfï¿½llen");
 				} else {
 					AsyncObj.checkLogin(nicknameBox.getValue(),
 							pwBox.getValue(), new AsyncCallback<User>() {
 								@Override
 								public void onSuccess(User result) {
 
+									
 									if (result.getUserId() != 0) {
 										Socialmediapinnwand_entry dashboard = new Socialmediapinnwand_entry();
+										Cookies.setCookie("SessionUserNickname",
+												result.getNickname());
+										Cookies.setCookie("SessionUserID",
+												String.valueOf(result.getUserId()));
 										dashboard.setUserObject(result);
 										RootPanel.get("content_wrap").clear();
 										RootPanel.get("head_wrap_middle")
@@ -89,8 +93,7 @@ public class Login extends HorizontalPanel {
 												.clear();
 										RootPanel.get("content_wrap").add(
 												dashboard);
-										Cookies.setCookie("SM4S",
-												result.getNickname());
+										
 
 									}
 

@@ -19,7 +19,7 @@ public class Socialmediapinnwand implements EntryPoint {
 	
 	
 	public void onModuleLoad() {
-		String checkCookie = Cookies.getCookie("SM4S");
+		String checkCookie = Cookies.getCookie("SessionUserNickname");
 		
 		if(checkCookie == null) {
 			

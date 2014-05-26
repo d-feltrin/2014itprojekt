@@ -36,7 +36,7 @@ public class Socialmediapinnwand_entry extends AbsolutePanel {
 
 	void loadUsers() {
 		// Dropdown aller vorhandenen User anzeigen
-		ListOfNicknames.addItem("User auswählen");
+		ListOfNicknames.addItem("User auswï¿½hlen");
 		ListOfNicknames.setSize("500px", "35px");
 		ListOfNicknames.addStyleName("mainmenu-dropdown");
 
@@ -68,14 +68,14 @@ public class Socialmediapinnwand_entry extends AbsolutePanel {
 	public void onLoad() {
 		loadUsers();
 
-		// OwnWall-Command für Menubar-Unterpunkt "Eigene Pinnwand" erstellen
+		// OwnWall-Command fï¿½r Menubar-Unterpunkt "Eigene Pinnwand" erstellen
 		Command ownWall = new Command() {
 			public void execute() {
 				Window.alert("Denise own wall jaja");
 			}
 		};
 
-		// Bearbeiten-Command für Menubar-Unterpunkt "Account bearbeiten"
+		// Bearbeiten-Command fï¿½r Menubar-Unterpunkt "Account bearbeiten"
 		// erstellen
 		Command editUser = new Command() {
 			public void execute() {
@@ -83,14 +83,15 @@ public class Socialmediapinnwand_entry extends AbsolutePanel {
 			}
 		};
 
-		// Logout-Command für Menubar-Unterpunkt "Logout" erstellen
+		// Logout-Command fï¿½r Menubar-Unterpunkt "Logout" erstellen
 		Command logout = new Command() {
 			public void execute() {
-				Cookies.removeCookie("SM4S");
+				Cookies.removeCookie("SessionUserNickname");
+				Cookies.removeCookie("SessionUserId");
 				RootPanel.get("content_wrap").clear();
 				RootPanel.get("head_wrap_middle").clear();
 				RootPanel.get("head_wrap_right").clear();
-				RootPanel.get("content_wrap").add(new Login());
+				RootPanel.get("head_wrap_middle").add(new Login());
 			}
 		};
 

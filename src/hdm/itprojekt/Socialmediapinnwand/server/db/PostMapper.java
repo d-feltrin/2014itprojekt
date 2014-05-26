@@ -23,14 +23,15 @@ public static PostMapper postMapper() {
 }
 
 
-public void insertPost(Post p) {
+public void insertPost(Post p, int userPostId) {
 	Connection con = DBConnection.connection();
 	try {
 		Statement state = con.createStatement();
-		String sqlquery = "INSERT INTO Post (post) VALUES ("
+		String sqlquery = "INSERT INTO Post (post, user_id) VALUES ("
 				+ "'"
 				+ p.getPost()
-				+ "') ;";
+				+ "'" +
+				","+userPostId+");";
 		state.executeUpdate(sqlquery);
 
 	} catch (Exception e) {

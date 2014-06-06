@@ -1,6 +1,8 @@
 package hdm.itprojekt.Socialmediapinnwand.client;
 
 import java.util.ArrayList;
+import java.util.Vector;
+
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.*;
 
@@ -15,6 +17,23 @@ public interface AServiceAsync {
 
 	void checkLogin(String nicknameBoxUser, String pwBoxUser,
 			AsyncCallback<User> asyncCallback);
+
+	void getAllPostsByUser(int pUserId, AsyncCallback<Vector<Post>> callback);
+
+	void getAllPostsByUserNickname(String UserNickname,
+			AsyncCallback<Vector<Post>> callback);
+
+	void addSubscribe(Subscription s, AsyncCallback<Void> callback);
+
+	void getUserIdByUserNickname(User user,
+			AsyncCallback<User> asyncCallback);
+
+	void addComment(Comment c, AsyncCallback<Void> callback);
+
+	
+
+	void GetCommentsByPostId(Comment c,
+			AsyncCallback<Vector<Comment>> asyncCallback);
 	
 	
 }

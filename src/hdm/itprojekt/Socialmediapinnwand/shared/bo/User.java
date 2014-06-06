@@ -3,8 +3,8 @@ package hdm.itprojekt.Socialmediapinnwand.shared.bo;
 public class User extends BusinessObject {
 	private static final long serialVersionUID = 1L;
 
-	/*Folgende Attribute benötigt die Klasse User, um einen User laut Anforderungen
-	beschreiben zu können*/
+	/*Folgende Attribute benï¿½tigt die Klasse User, um einen User laut Anforderungen
+	beschreiben zu kï¿½nnen*/
 	private String vorname;
 	private String nachname;
 	private String nickname;
@@ -12,18 +12,19 @@ public class User extends BusinessObject {
 	private String password;
 	private int user_id;
 	private int anzahlFremderAbonnenten;
+
 	
 	/*Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
-	*wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
-	*Muss sie hier dann überhaupt reingeschrieben werden?*/
+	*wird hier nicht ï¿½berschrieben, da die Methode genau die gleiche bleibt
+	*Muss sie hier dann ï¿½berhaupt reingeschrieben werden?*/
 	
 	//public void setId(int id) {
 	//	super.setId(id);
 	//}
 
 	/*Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
-	*wird hier nicht überschrieben, da die Methode genau die gleiche bleibt
-	Muss sie hier dann überhaupt reingeschrieben werden?*/
+	*wird hier nicht ï¿½berschrieben, da die Methode genau die gleiche bleibt
+	Muss sie hier dann ï¿½berhaupt reingeschrieben werden?*/
 	
 	
 	public int getUserId() {
@@ -89,9 +90,6 @@ public class User extends BusinessObject {
 		return anzahlFremderAbonnenten;
 	}
 
-	public void setDozentID(int int1) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }

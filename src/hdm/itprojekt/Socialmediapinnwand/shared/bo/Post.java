@@ -6,15 +6,17 @@ public class Post extends BusinessObject {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/*Folgende Attribute benötigt die Klasse Post, um ein Posting laut Anforderungen
-	beschreiben zu können*/
+	/*Folgende Attribute benï¿½tigt die Klasse Post, um ein Posting laut Anforderungen
+	beschreiben zu kï¿½nnen*/
 	private String post;
 	private String timestamp;
+	
 	
 	//Methode, um den Text eines Posts zu setzen
 	public void setPost(String postText){
 		post = postText;
 	}
+	
 	
 	//Methode, um den Text eines Posts zu erhalten
 	public String getPost(){

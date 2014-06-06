@@ -2,27 +2,50 @@ package hdm.itprojekt.Socialmediapinnwand.shared.bo;
 
 public class Comment extends BusinessObject {
 
-	/*Folgende Attribute benötigt die Klasse Comment, um einen Kommentar laut Anforderungen
-	beschreiben zu können*/
-	private String text;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	/*Folgende Attribute benï¿½tigt die Klasse Comment, um einen Kommentar laut Anforderungen
+	beschreiben zu kï¿½nnen*/
+	private String commentText;
+	private int commentId;
 	private String timestamp;
+	private int commentPostId;
+	private int fromCommentId;
+	private String CommentFromUserNickname;
 	
-	//Methode, um den Text eines Kommentars zu setzen
-	public void setText(String text){	
+	public String getCommentText() {
+		return commentText;
 	}
-		
-	//Methode, um den Text eines Kommentars zu erhalten
-	public String getText(){
-		return text;
+	public void setCommentText(String commentText) {
+		this.commentText = commentText;
 	}
-		
-	//Methode, um den Zeitpunkt eines Kommentars zu setzen
-	public void setTimestamp(String timestamp){	
+	public int getCommentId() {
+		return commentId;
 	}
-		
-	//Methode, um den Zeitpunkt eines Kommentars zu erhalten
-	public String getTimestamp(){
-		return timestamp;
+	public void setCommentId(int commentId) {
+		this.commentId = commentId;
 	}
+	public int getCommentPostId() {
+		return commentPostId;
+	}
+	public void setCommentPostId(int commentPostId) {
+		this.commentPostId = commentPostId;
+	}
+	public int getFromCommentId() {
+		return fromCommentId;
+	}
+	public void setFromCommentId(int fromCommentId) {
+		this.fromCommentId = fromCommentId;
+	}
+	public String getCommentFromUserNickname() {
+		return CommentFromUserNickname;
+	}
+	public void setCommentFromUserNickname(String commentFromUserNickname) {
+		CommentFromUserNickname = commentFromUserNickname;
+	}
+	
+	
 	
 }

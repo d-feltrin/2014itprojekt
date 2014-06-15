@@ -173,7 +173,7 @@ public int getPostCountByUserId(int user_id) {
 	try {
 		Statement state = con.createStatement();
 		ResultSet rs = state
-				.executeQuery("SELECT COUNT(`id`) FROM `Post` WHERE `user_id` = "
+				.executeQuery("SELECT COUNT(`id`) FROM `Post` WHERE `poster_id` = "
 						+ user_id); // User Npro Zeile �bergeben;
 		//user_id
 		while (rs.next()) {

@@ -23,7 +23,9 @@ import hdm.itprojekt.Socialmediapinnwand.client.BoardPanel.createOwnBoardByNickn
 import hdm.itprojekt.Socialmediapinnwand.client.HeadlineBar.HeadlinesBarEditor;
 import hdm.itprojekt.Socialmediapinnwand.client.HeadlineBar.HeadlinesBarReport;
 import hdm.itprojekt.Socialmediapinnwand.client.LoginPanels.LoginDasboard;
+import hdm.itprojekt.Socialmediapinnwand.client.gui.AllUsersbByAllInfoObject;
 import hdm.itprojekt.Socialmediapinnwand.client.gui.BoardOverview;
+import hdm.itprojekt.Socialmediapinnwand.client.gui.OneUserByOneInfoObjects;
 import hdm.itprojekt.Socialmediapinnwand.client.gui.ReportOverview;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.User;
 
@@ -161,8 +163,8 @@ public class LoginEntry extends AbsolutePanel {
 					hB1.setHeadlineInHeadlineBar("Toplisten");
 					HeadlinesBarReport HeadlinesBarEditor1 =  hB1.new HeadlinesBarReport();
 	 				RootPanel.get("content_wrap").add(HeadlinesBarEditor1);
-	 			//	RootPanel.get("content_wrap").add(new AllUsersbByAllInfoObject());
-	 				Window.alert("aas");
+	 			// 	RootPanel.get("content_wrap").add(new AllUsersbByAllInfoObject());
+	 				//Window.alert("aas");
 					
 				}
 			};
@@ -174,8 +176,8 @@ public class LoginEntry extends AbsolutePanel {
 					hB3.setHeadlineInHeadlineBar("User Statistiken");
 					HeadlinesBarReport HeadlinesBarEditor2 =  hB3.new HeadlinesBarReport();
 	 				RootPanel.get("content_wrap").add(HeadlinesBarEditor2);
-	 			//	RootPanel.get("content_wrap").add(new OneUserByOneInfoObjects());
-	 				Window.alert("ttttaass");
+	 		//	 	RootPanel.get("content_wrap").add(new OneUserByOneInfoObjects());
+	 				//Window.alert("ttttaass");
 	 	
 				}
 			};

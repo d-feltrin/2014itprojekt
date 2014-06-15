@@ -2,8 +2,8 @@ package hdm.itprojekt.Socialmediapinnwand.shared.bo;
 
 public class Like extends BusinessObject {
 
-	/*Folgende Attribute benötigt die Klasse Like, um einen Like laut Anforderungen
-	beschreiben zu können*/
+	/*Folgende Attribute benï¿½tigt die Klasse Like, um einen Like laut Anforderungen
+	beschreiben zu kï¿½nnen*/
 	private boolean like;
 	private int likeCounter;
 	
@@ -16,7 +16,7 @@ public class Like extends BusinessObject {
 		return like;
 	}
 		
-	//Methode, um die Like-Beziehungen zu addieren = um 1 zu erhöhen
+	//Methode, um die Like-Beziehungen zu addieren = um 1 zu erhï¿½hen
 	public void setLikeCounter(int likeCounter){	
 	}
 		

@@ -22,12 +22,10 @@ public static LoginMapper loginMapper() {
 	return loginMapper;
 }
 
-
 public User checkLogin (String nicknameBoxUser, String pwBoxUser) {
 	Connection con = DBConnection.connection();
 	User u = new User();
 	try {
-		
 		
 		Statement state = con.createStatement();		
 		ResultSet rs = state.executeQuery("SELECT * FROM User WHERE nickname='"+ nicknameBoxUser +"' AND password='"+pwBoxUser+"'");
@@ -35,12 +33,11 @@ public User checkLogin (String nicknameBoxUser, String pwBoxUser) {
 		while(rs.next()) {
 		
 		u.setUserId(rs.getInt("id"));
-		u.setVorname(rs.getString("vorname"));
-		u.setNachname(rs.getString("nachname"));
+		u.setfirstname(rs.getString("firstname"));
+		u.setlastname(rs.getString("lastname"));
 		u.setEMailAdress(rs.getString("email"));
 		u.setNickname(rs.getString("nickname"));
 		u.setPassword(rs.getString("password"));
-		
 		
 		}
 		
@@ -52,5 +49,3 @@ public User checkLogin (String nicknameBoxUser, String pwBoxUser) {
 }
 
 }
-
- 

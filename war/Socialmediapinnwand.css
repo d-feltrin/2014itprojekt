@@ -1,31 +1,95 @@
 
 *{ margin-left:auto; margin-right:auto; font-family:Arial, Helvetica, sans-serif;}
- body{ background-color:#f3f3f3;}
- 
+ body{background-color:#f3f3f3 !Important; font-size:12px;}
+  html{ background-color:#f3f3f3;}
+  
 #wrap{   min-height: 800px;
-    width: 960px;  }
+    width: 960px;  
+ 
+	        }
 
 /*head wrap*/
 #head_wrap{background-color: #f3f3f3;
 width: 100%;
 background-image: url(img/logo_bg.jpg);
 height: 68px;}
-#head_wrap_left{ background-image: url(img/logo_bg.jpg); background-repeat:repeat-x;       width: 230px; height: 48px;  padding-top: 20px; padding-left:30px; border-right:4px solid #FFF; float:left;  }
+#head_wrap_left{ background-image: url(img/logo_bg.jpg); background-repeat:repeat-x;       width: 230px; height: 48px;  padding-top: 20px; padding-left:30px; border-right:4px solid #f3f3f3; float:left;  }
 #head_wrap_left a, img{ text-decoration:none; border:none;  }
 
-
+body, table td, select, button {
+	font-size:12px!Important; ;
+}
 #head_wrap_middle{ 
 height: 48px;
 width: 40%;
  float:left; 
 }
+ 
+DIV.UserMainMenuBtn.UserMainMenuBtn-vertical{Background-color: #fff !important;}
+.Postbar_buttons_Panel{background:none !Important; height: 25px;}
+
+ 
+.Post_bar_saveBtn{background:none !Important; height: 25px;}
+.Post_bar_closeBtn{background:none !Important; height: 25px;}
+.Post_bar_headline{background:#f3f3f3; font-weight:bold; font-size:14px; text-align:center; padding-top:10px; padding-bottom:10px; }
+.Post_bar_contentPanel{top: 0px; vertical-align:text-top; horizontal-align:top; font-size:12px; padding:10px; background:#fff;   }
+.Post_bar_wrapPanel{background:#fff; }
+.Post_bar_ButtonPanel{  width:100%;height: 40px; background:#f3f3f3; padding-top:5px;}
+
+.Post_bar_a{background:none !Important; height: 100%;    }
+.Post_bar_a div{  top:25px !Important; }
+
+ .Post_bar_edit_textbox{min-width:350px; min-height:150px;  horizontal-align:top; top:0px; }
+ 
+ 
+ .gwt-DialogBox{    }
+ 
+ 
+ body, html
+{
+        height: 100%;
+        }
+
+
+
+
+
 #head_wrap_right{height: 48px;
 width: auto;
  float:right; }
-.gwt-ListBox mainmenu-dropdown{ line-height:25px;}
+ 
+ /*Board*/
+ .leftVpSubProfilInfo_Headline{font-size:20px; margin-top:20Px; margin-bottom:15px;}
+ .leftVpSubProfilInfo_Subline{font-size:11px; line-height:29px; padding-left:10px; font-weight:bold; }
+  .leftVpSubProfilInfo_Subline1 {font-size:39px; line-height:29px; padding-left:10px; margin-bottom:16px; }
+ .leftVpSubProfilInfo_Subline2 {font-size:11px; line-height:29px; padding-left:10px; }
+.leftVpSubProfilInfo{height: 48px;
+width: auto;
+ float:left; }
+ 
+ .headlineAbo_pinnwand{ font-size:11px; margin-top:15px; width:210px; height:25px; text-align:center; font-weight:bold;}
+ 
+ .leftVpSubAboInfo{height: 48px;
+width: 210px;border: 1px solid #ccc; 
+   }
+ 
+ .leftVpBoard{height:100%; min-height:500px;
+width: 205px;
+ background:#fff; margin-right:5px; padding-left:30px;
+   }
+ 
+ .rightVpBoard{height: 48px;
+width: 710px;
+  background:#fff; height:100%; min-height:500px;}
+ 
+ 
 
 /*content wrap*/
-#content_wrap{ clear:both;}
+#content_wrap{ clear:both; /*background-color:#fff;*/ margin-top:5px; 
+//padding: 15px 25px 25px 35px;
+min-height:500px; height:100%;
+
+}
 
 /*content wrap left*/
 #content_wrap_left{
@@ -33,6 +97,239 @@ width: auto;
  float:left;
  
  }
+ 
+ /*Mainmenu*/
+.mainmenu{
+background-color: transparent;
+ color:#fff;
+ font-size:13px;
+ font-weight:thin;
+ border:1px  solid #fff;
+ padding:5px 10px 5px 10px;
+ text-align:center;
+margin: 19px 15px 0px 0px;
+ 
+ }
+  										
+  										.PostDeleteBtn{ background-color:#c31111;border-radius: 11px; color:#fff; margin: auto 0px; font-size:9px; }
+  										.PostEditBtn{background-color:#484848;border-radius: 11px;color:#fff; margin: auto 0px;font-size:9px; }
+  										.PostLikeBtn{background-color:#0d92ef;border-radius: 11px;color:#fff; margin: auto 0px;font-size:9px;}
+   										.PostCommentBtn{  background-color:#0ccb2b;border-radius: 11px;color:#fff; margin: auto 0px;font-size:9px;}
+ 
+  /*Headlinebar*/
+ 
+ 
+ .HeadlinesBarEditorLeft{ /*width: 230px; */  width: 110px; float:left; padding:5px 8px 5px 8px; height:26px; color:#fff; background-color:#69c62b;}
+  .vPRight{text-align:center !Important;   padding:4px 8px 2px 8px; height:26px; width:760px; color:#fff; }
+  .vPRight *{text-align:center !Important;  font-size:16px; font-weight:bold; }
+  .headlineBar{ background:#000; width:960px; height:26px; margin-bottom:5px;}
+ 
+   .vPHeadlinesAllUserAllInfoObjectsAllStats{text-align:left !Important; font-weight:bold;  padding:4px 8px 2px 8px; height:26px; width:100%; border-bottom:1px solid #ccc; color:#000; margin-bottom: 5px; margin-top:15px; }
+ 
+ 
+ /*Content Impressum*/
+#Impressum{width:80px;float:right;} 
+  .impressumBtn { font-size:11px;   background:none;padding:0px; color:#279ad0; text-decoration:underline; border:none;}
+  .impressumTxt{ margin:2px 0px 0px 8px; width:850px; float:left; font-size:11px;}
+  
+  /*footer wrap*/
+#footer_wrap{text-align:left;border:1px solid #ccc; padding: 3px 0px 0px 3px;   width: auto;  height:20px; clear: both;}
+  
+  
+  
+  
+ /*LoginPanel*/
+  .gwt-PasswordTextBox{height:18px; margin:0px 1px 0px 1px; width: 155px;}
+ .LoginPanelRight,  .LoginPanelLeft {background:#fff; padding: 15px 10px 25px 10px; border:1px solid #d4d4d4; min-height:200px;}
+  .LoginPanelRight { margin-left:2px; width:auto; }
+  .LoginPanelLeft { margin-right:2px; width:auto;}
+ 
+ 
+ .LoginSublineEditor {font-size:13px; color:rgb(51, 51, 51); padding-bottom:10px; line-height:20px;}
+ .LoginSublineReport {font-size:13px; color:rgb(51, 51, 51);  padding-bottom:10px; line-height:20px;}
+ 
+  .LoginHeadlineEditor {font-size:22px; color:#000; padding-bottom:10px; font-weight:100;}
+ .LoginHeadlineReport {font-size:22px; color:#000;  padding-bottom:10px; font-weight:100;}
+  
+  .aboVpSubline {font-size:12px; color:rgb(51, 51, 51);  padding-bottom:10px; padding-left:10px; padding-right:10px;line-height:20px;}
+  .postVpSubline {font-size:12px; color:rgb(51, 51, 51);  padding-bottom:10px; padding-left:10px; padding-right:10px;line-height:20px;}
+   .likeVpSubline {font-size:12px; color:rgb(51, 51, 51);  padding-bottom:10px; padding-left:10px; padding-right:10px;line-height:20px;}
+   .commentVpSubline {font-size:12px; color:rgb(51, 51, 51);  padding-bottom:10px; padding-left:10px; padding-right:10px;line-height:20px;}
+ 
+ .postVpHeadline {font-size:20px; color:#000; padding-bottom:10px; padding-left:10px; padding-right:10px; font-weight:100; margin-top:15px;  }
+ .aboVpHeadline {font-size:20px; color:#000; padding-bottom:10px; padding-left:10px; padding-right:10px; font-weight:100; margin-top:15px;  }
+ .likeVpHeadline {font-size:20px; color:#000; padding-bottom:10px; padding-left:10px; padding-right:10px; font-weight:100; margin-top:15px;  }
+  .commentVpHeadline {font-size:20px; color:#000; padding-bottom:10px; padding-left:10px; padding-right:10px; font-weight:100; margin-top:15px;  }
+   /*Report Show One User One*/
+  .oneoneHeadline {font-size:20px; color:#000; padding-bottom:10px; padding-left:10px; padding-right:10px; font-weight:100; margin-top:15px;  }
+ .ListOfNicknames2{}
+ 
+ .reportHoriPanel1Tab{width:960px;}
+ /*Report Show All User All Post*/
+ 
+ .aboVp, .postVp, .CommentsVp, .likesVp {
+  width:236px;
+ }
+ .postVp{background:#fff; padding: 15px 10px 25px 10px; border:1px solid #d4d4d4; min-height:200px;}
+  .aboVp{background:#fff; padding: 15px 10px 25px 10px; border:1px solid #d4d4d4; min-height:200px;}
+   .CommentsVp{background:#fff; padding: 15px 10px 25px 10px; border:1px solid #d4d4d4; min-height:200px;}
+   .likesVp{background:#fff; padding: 15px 10px 25px 10px; border:1px solid #d4d4d4; min-height:200px;}
+    .reportHorPanelVp{background:#fff; padding: 15px 10px 25px 10px; border:1px solid #d4d4d4; min-height:200px; width:960px;}
+ 
+ 
+ 
+  /***************************************
+ Report One User Panelklassen
+ ****************************************
+ */
+ .OneOneReportVpanel1{width:230px; float:left;   color:#ccc;} 
+ 
+ .OneOneReportVpanel2{min-height:500px; width:660px;} 
+ 
+ 
+ .BgWelcome {
+ font-size:44px; color:#999;
+ font-weight:thin;
+position:relative;
+  z-index:4;
+ background-color: rgba(255,255,255, 0.8);
+ width:auto;
+ height:auto;
+  padding:10px;
+   top:285px;
+  
+ text-align:center;
+ 
+ left: -259px;
+ }
+ 
+ 
+ .BgImage{
+ z-index:1;
+ 
+ }
+ 
+ /***************************************
+ 	Flextable Report ShowAllUserAllPost    .report7table  tr td:nth-child(*)   {width: auto;}
+ ****************************************
+ */
+  .report1Table tr:nth-child(odd){background:#f1f1f1;}   
+  .report2Table tr:nth-child(odd) {background:#f1f1f1;}
+    .report3Table tr:nth-child(odd){background:#f1f1f1;}   
+  .report4Table tr:nth-child(odd) {background:#f1f1f1;}
+    .report7table tr:nth-child(odd) {background:#f3f3f3;  margin-top:15px; border-bottom:40px solid white;  }
+    
+    .report7table  tr td:nth-child(*)   {line-height:50px; height: 50px;}
+    .report7table  tr:nth-child(2n+2) {height:30px !Important;  width: auto; background:#f4f4f4; margin-bottom:4px; Padding:10px;  border-bottom:1px solid #ccc;   }
+    
+       
+    
+       
+      /* .report7table  tr:nth-child(2n+2) td* {height:100%; min-height:50px; margin-bottom:4px; Padding:10px;}*/
+      /*  .report7table  tr:nth-child(odd+1) {width: auto; background:#fdfdfd;}*/
+    
+ 
+  .report1Table {background:#fff; border:1px solid #f3f3f3;width:90%; margin-top:15px; }
+  .report2Table {background:#fff; border:1px solid #f3f3f3;width:90%; margin-top:15px; }
+  .report3Table {background:#fff; border:1px solid #f3f3f3;width:90%; margin-top:15px; }
+  .report4Table {background:#fff; border:1px solid #f3f3f3;width:90%; margin-top:15px; }
+    .report7table {background:#fff;  width:600px; margin-top:15px; height:100%; font-size:11px;  border-spacing: 0;
+    border-collapse: inherit;   }
+  
+ 
+       .report7table tr:first-child,  .report7table tr:first-child td  {
+   background:#fff; font-size:10px; color:#888;   text-left;  height:25px ;  /*border-bottom:16px solid white !Important;*/
+}
+    .report1Table tr, .report2Table tr , .report3Table tr, .report4Table, .report7table tr{min-height:25px; height:100%; min-width:35px; }
+  .FlexTable-Header{background:#fff;}
+  .FlexTable-ColumnLabelCell{}
+ 
+ .boardHoriPanel1Tab{width:960px;}
+ 
+  .boardHoriPanel1Tab tr:first-child{ background:#fff;}
+  
+ .firstline0, .firstline1, .firstline2, .firstline3, .firstline4, .firstline5, .firstline6, .firstline7{font-size:10px;background:#444444 !Important; color:#fff!Important;   }
+
+  .firstline0 { font-weight:bold; text-align:center; background:#000 ! Important;  width:15px;  }
+   .firstline1 {padding-left:8px; width:200px; color:#000; font-weight:bold;  }
+    .firstline2 {min-width:15px; max-height:150px; font-size:10px !Important;  }
+     .firstline3 { width:30px;  }
+      .firstline4 {width:100px;  }
+       .firstline5 {width:30px;  }
+        .firstline6 { width:30px;  }
+ 		  .firstline7 {  width:30px;}
+			.secoundline { vertical-align:top; top:0px;line-height: 18px; min-height:85px; height:100%; Padding-top:18px; padding:10px;  border-bottom:15px #fff solid;     }								
+ 			tr .secoundline , 	tr .secoundline_d3 { vertical-align:top; top:0px;  }								
+ 
+ .secoundline_d3_b{ background:#fff; border-bottom:1px solid #fff;}
+  
+ .secoundline_d3_b1{ background:#f93;}
+ 
+  /*  .firstline1_d3 {font-weight:bold; text-align:center; background:#000; color:#fff; width:15px; })*/
+ 
+ 
+  .firstline0_d3 { font-weight:bold; text-align:left; background:#fff;color:#fff;  width:15px;  }
+   .firstline1_d3 {font-weight:bold; text-align:center; background:#08659a!Important; color:#fff; width:25px!Important;  }
+    .firstline2_d3 {width:150px; font-size:10px !Important; padding-left:5px;  }
+     .firstline3_d3 { width:auto;  }
+      .firstline4_d3 {width:auto;  }
+       .firstline5_d3 {width:auto;  }
+        .firstline6_d3 { width:auto;  }
+ 		  .firstline7_d3 {  idth:auto; }
+			.secoundline_d3 { color: #000; line-height: 18px; min-height:85px; height:100%; Padding-top:18px; padding:10px; color:#000;  background:#d3f1ff; border-bottom:20px solid #fff;  }
+ 
+    .firstline1_d3, .firstline2_d3, .firstline3_d3, .firstline4_d3, .firstline5_d3, .firstline6_d3, .firstline7_d3{font-size:10px; background:#6db7e2;  color:#fff;  }
+ 
+   /*
+    .firstline1_d3 { width:30px; border-top: 50px #fff solid; height:35px; }
+        .firstline2_d3 { width:30px;  border-top: 50px #fff solid; height:35px;}
+            .firstline3_d3 { width:30px;  border-top: 50px #fff solid;height:35px; }
+                .firstline4_d3 { width:30px; border-top: 50px #fff solid;height:35px;  }
+ 			.secoundline_d3 { line-height: 18px; min-height:50px; height:100%; Padding-top:18px; padding:10px;     }								
+
+ */
+ 
+ /*Abo Delete Knopf*/
+ 
+ .aboVpDeleteBtn {background:#0ccb2b; color:#fff; height:25px; text-align:center; font-weight:bold;margin-top: 15px; width:210px;} 
+ 
+ /***************************************
+	Zurück-Login & Registieren Button
+ ****************************************
+ */
+ 
+ .RegisterButton1, .BackLoginButton1  {
+ 
+ background-color:#1480A3;
+background-color: transparent;
+ color:#fff;
+ font-size:13px;
+ font-weight:thin;
+ border:1px  solid #fff;
+ padding:5px 10px 5px 10px;
+ text-align:center;
+margin: 19px 15px 0px 0px;
+ 
+ }
+ 
+ .mainmenu-UserMainMenu {
+ 
+  background-color: rgba(255,255,255, 0.25);
+  color:#fff;
+ font-size:13px;
+ font-weight:thin;
+ border:1px  solid #fff;
+	margin-top:15px;
+	margin-right:15px;
+ text-align:center;
+ border 1px solid #fff; 
+ 
+ }
+ 
+
+   .gwt-MenuBar-horizontal{	margin-top:15px!Important; background-image:none !Important;  color:#fff;  background-color: rgba(255,255,255, 0.25);  border 1px solid #fff; }
+ 
+ 
  
  /*Profilbox Klassen*/
  #profilbox{
@@ -61,29 +358,87 @@ width: auto;
  #subsbox ul , #actionbox ul{ margin-bottom:0px; }
 
 /*content wrap right*/
-#content_wrap_right{      background: none repeat scroll 0 0 #FFFFFF;
+#content_wrap_right{      /*background: none repeat scroll 0 0 #FFFFFF;*/
     margin-left: 265px;
     padding-bottom: 50px;
     padding-top: 30px;
     width: 695px;;}     
 #postnowbox{    font-size: 13px;
-    line-height: 30px;  width: 80%; border:1px solid #ccc;}
+    line-height: 30px;  width: 600px%; border:1px solid #ccc;}
  .postnowbox_headline{  font-size:12 px; line-height:35px; padding-left:15px; background-color:#f3f3f3; border-bottom:1px solid #ccc; soid;  }
- .postnowbox_content{  font-size:18px; height:100%; min-height:200px; background:#fff;}
- .postnowbox_submit_button{     background: none repeat scroll 0 0 #333333;
-    color: #FFFFFF;
-    float: right;
+ .postnowbox_content{  font-size:12px; height:140px;    
+    width: 600px;background:#fff; margin-left:auto; margin-right:auto;}
+ 
+ .boardBeitragPostenBox{width:600px;  margin-left:auto; margin-right:auto;}
+ 
+ 
+ 
+ .postnowbox_submit_button{    
+  /*background: none repeat scroll 0 0 #333333;*/
+ background: none repeat scroll 0 0 #000;
+    color: #ccc;
+    float: left;
+    font-weight:bold;
     font-size: 12px;
     line-height: 19px;
     padding: 5px;
     text-align: center;
-    width: 111px;
+    margin-top:5px;
+    width: 604px;
  }
  
 #postoverviewbox{}
 
-/*footer wrap*/
-#footer_wrap{  width: 960px;  height:46px; clear: both;}
+.mainmenu-dropdown{
+	
+  background-color: rgba(255,255,255, 0.25);
+	// background-color:  rgba(227, 232, 243, 1.0)
+	
+ border: none;font-weight:bold;
+ color:#000;
+	margin-top:15px; line-height:22px;
+		margin-left:30px;
+	
+}
+
+.firstline_abo{
+width:190px; line-height:25px; font-weight:bold; 	padding-left:10px;    
+	
+}
+
+    .leftVpSubAboInfo tr:nth-child(odd) {border-bottom:1px solid #ccc; }
+
+.secoundline_abo{
+	width:30px; 
+	
+}							 
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+/* Create User */
+.CrUserLoginPanel1 {z-index:1; }
+.CrUserLoginPanel2 {
+position:relative;
+z-index: 5;
+ right:-150px;
+margin-top:-304px;
+clear:both;
+background-color: rgba(255,255,255, 0.8);
+ width:500px;
+ height:300px;
+  padding-top:45px; }
+
+.CrUserHeadline{font-size:22px; color:#000; padding-bottom:10px; font-weight:100;  text-align:center;}
 
 .LoginNicknameBox { width: 105px; height:18px; margin-right: 5px; margin-top:2px;}
 .LoginPaswordBox { width: 105px; height:18px; margin-top:2px;}
@@ -92,18 +447,33 @@ width: auto;
     color: #FFFFFF;;
     float: right;
     font-size: 10px;
-    line-height: 12px;
-    padding: 5px;
+ height: 25px; border:none;
+     padding: 5px;
     text-align: center;
     width: 111px;
     margin-right:5px;
+    border:none;
 }
-.RegisterButton {
+
+.registerButton {
 	 background: none repeat scroll 0 0 #333333;
     color: #FFFFFF;;
     float: right;
     font-size: 10px;
-    line-height: 12px;
+     height: 28px; 
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+    margin-left:2px;
+    border:none;
+}
+
+.RegisterButton ,.LoginButtonReport ,.LoginButtonEditor{
+	 background: none repeat scroll 0 0 #333333;
+    color: #FFFFFF;;
+    float: right;
+    font-size: 10px;
+/*    line-height: 12px;*/
     padding: 5px;
     text-align: center;
     width: 111px;

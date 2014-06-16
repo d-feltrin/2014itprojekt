@@ -29,8 +29,7 @@ public interface AService extends RemoteService {
 	
 	User getOneUserIdByNickname(String selectedNickname);
 	
-	int getPostsByUserId(int user_id);
-
+ 
 	int getSubscriptionByUserId(int user_id);
 
 	int getLikesByUserId(int user_id);
@@ -99,6 +98,10 @@ public interface AService extends RemoteService {
 	ArrayList<Subscription> getAllSubscriptionsById(Subscription s);
 
 	void deleteSubscriptionBySubscriptionID(Subscription s);
+
+	int getPostsByUserId(int userid);
+
+ 
 
 	//void deleteUser(DeleteUser u, AsyncCallback<Void> asyncCallback);
 	

@@ -112,6 +112,7 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 	@Override
 	public int getPostsByUserId(int user_id) {
 			init();
+ 
 			int postCount = pMapper.getPostCountByUserId(user_id);
 			return postCount;
 	}

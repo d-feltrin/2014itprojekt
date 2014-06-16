@@ -771,7 +771,7 @@ public class BoardPanel extends HorizontalPanel {
 				createSubscriptionByUserNickname(user);
 
 			}
-		});
+		});  
 		
 		leftVpSubProfilInfo.setStylePrimaryName("leftVpSubProfilInfo");
 		leftVpSubAboInfo.setStylePrimaryName("leftVpSubAboInfo");

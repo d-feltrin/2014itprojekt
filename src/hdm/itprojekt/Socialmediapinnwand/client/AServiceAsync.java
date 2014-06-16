@@ -20,8 +20,7 @@ public interface AServiceAsync {
 
 	void getAllUsersById(int id, AsyncCallback<ArrayList<User>> callback);
 
-	void getPostsByUserId(int user_id, AsyncCallback<Integer> callback);
-
+ 
 	void getSubscriptionByUserId(int user_id, AsyncCallback<Integer> callback);
 
 	void getLikesByUserId(int user_id, AsyncCallback<Integer> callback);
@@ -104,6 +103,10 @@ public interface AServiceAsync {
 
 	void deleteSubscriptionBySubscriptionID(Subscription s,
 			AsyncCallback<Void> callback);
+
+	 
+
+	void getPostsByUserId(int userid, AsyncCallback<Integer> asyncCallback);
 
 	// void deleteUser(DeleteUser u, AsyncCallback<Void> asyncCallback);
 

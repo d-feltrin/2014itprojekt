@@ -14,14 +14,29 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import com.google.gwt.user.client.Window;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CommentMapper.
+ */
 public class CommentMapper {
 	
+	/** The comment mapper. */
 	private static CommentMapper commentMapper = null;
+	
+	/** The con. */
 	public Connection con = DBConnection.connection();
 
+	/**
+	 * Instantiates a new comment mapper.
+	 */
 	protected CommentMapper() {
 	}
 
+	/**
+	 * Comment mapper.
+	 *
+	 * @return the comment mapper
+	 */
 	public static CommentMapper commentMapper() {
 		if (commentMapper == null) {
 			commentMapper = new CommentMapper();
@@ -33,6 +48,11 @@ public class CommentMapper {
 	
 	
  
+	/**
+	 * Save post for edit.
+	 *
+	 * @param p the p
+	 */
 	public void savePostForEdit (Post p) {
 		 
 		
@@ -56,6 +76,11 @@ public class CommentMapper {
 	
 
 	
+	/**
+	 * Save comments for edit.
+	 *
+	 * @param c the c
+	 */
 	public void saveCommentsForEdit (Comment c  ) {
 		 
 		
@@ -81,6 +106,12 @@ public class CommentMapper {
 	
 	 
 	
+ /**
+  * Load comments for edit.
+  *
+  * @param commentId the comment id
+  * @return the comment
+  */
  public Comment loadCommentsForEdit (int commentId) {
 		
 	 Comment c = new Comment(); 
@@ -102,6 +133,11 @@ public class CommentMapper {
 		
 	}
 	
+	/**
+	 * Delete comments by comment id.
+	 *
+	 * @param commentId the comment id
+	 */
 	public void deleteCommentsByCommentID(int commentId  ) {
 		
 		Connection con = DBConnection.connection();
@@ -118,6 +154,11 @@ public class CommentMapper {
 	}
 	
 	
+	/**
+	 * Creates the comment by post id.
+	 *
+	 * @param c the c
+	 */
 	public void createCommentByPostID (Comment c){
 		Connection con = DBConnection.connection();
 

@@ -23,33 +23,59 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EditComment.
+ */
 public class EditComment extends DialogBox{
 	
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
+	
+	/** The comment id. */
 	private int commentId;
+	
+	/** The c. */
 	private Comment c = new Comment();
 	
 //	int left = Window.getClientWidth() /2;
 //	int top = Window.getClientHeight() /2;
 	
-	private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
+	/** The selected nickname3. */
+private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
 
+	/** The a. */
 	DialogBox a = new DialogBox(true); 
+	
+	/** The save btn. */
 	Button saveBtn = new Button("Speichern");
+	
+	/** The close btn. */
 	Button closeBtn = new Button("Abbrechen");
+	
+	/** The edit post. */
 	TextArea editPost = new TextArea();
 
+	/** The headline. */
 	Label headline = new Label("Kommentar bearbeiten");
 	
+	/** The content panel. */
 	VerticalPanel contentPanel = new VerticalPanel();
 	
+	/** The wrap panel. */
 	private final VerticalPanel wrapPanel = new VerticalPanel();
 	
+	/** The Button panel. */
 	FlowPanel ButtonPanel = new FlowPanel();
 	
 
 
 	
+	/**
+	 * Instantiates a new edits the comment.
+	 *
+	 * @param commentId the comment id
+	 */
 	public EditComment(int commentId  ){
   
 		this.commentId = commentId;  
@@ -63,6 +89,11 @@ public class EditComment extends DialogBox{
  		setWidget(wrapPanel);
 	}
 
+/**
+ * Save comments for edit panel.
+ *
+ * @param c the c
+ */
 public void saveCommentsForEditPanel(Comment c) {
  
  	 
@@ -89,6 +120,12 @@ public void saveCommentsForEditPanel(Comment c) {
 	
 }
 	
+/**
+ * Load comments for edit panel.
+ *
+ * @param commentId the comment id
+ * @return the comment
+ */
 public Comment loadCommentsForEditPanel( int commentId) {
 	
 	

@@ -15,16 +15,34 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class AServiceImpl.
+ */
 public class AServiceImpl extends RemoteServiceServlet implements AService {
 
+	/** The u mapper. */
 	private UserMapper uMapper = null;
+	
+	/** The p mapper. */
 	private PostMapper pMapper = null;
+	
+	/** The l mapper. */
 	private LoginMapper lMapper = null;
+	
+	/** The b mapper. */
 	private BoardMapper bMapper = null;
+	
+	/** The c mapper. */
 	private CommentMapper cMapper = null;
+	
+	/** The s mapper. */
 	private SubscriptionMapper sMapper = null;
+	
 	/**
-	 * Initialize all database-mapper and extends service-servlet
+	 * Initialize all database-mapper and extends service-servlet.
+	 *
+	 * @throws IllegalArgumentException the illegal argument exception
 	 */
 	public void init() throws IllegalArgumentException {
 		this.uMapper = UserMapper.userMapper();
@@ -36,11 +54,17 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#insertUser(hdm.itprojekt.Socialmediapinnwand.shared.bo.User)
+	 */
 	public void insertUser(User u) {
 		init();
 		uMapper.insertUser(u);
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getOneUserIdByID(int)
+	 */
 	public ArrayList<User> getOneUserIdByID(int id) {
 		init();
 		 ArrayList<User> u  =bMapper.getOneUserIdByID(id);
@@ -54,17 +78,26 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 	 
 	}
 	 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#deleteUser(hdm.itprojekt.Socialmediapinnwand.shared.bo.User)
+	 */
 	public void deleteUser(User u) {
 		init();
 		uMapper.deleteUser(u);
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#checkUserDuplicate(hdm.itprojekt.Socialmediapinnwand.shared.bo.User)
+	 */
 	public boolean checkUserDuplicate(User u) {
 		init();
 		boolean a = uMapper.checkUserDuplicate(u);
 		return a; 
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllUsers()
+	 */
 	@Override
 	public ArrayList<User> getAllUsers() throws IllegalArgumentException {
 		init();
@@ -76,6 +109,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#checkLogin(java.lang.String, java.lang.String)
+	 */
 	public User checkLogin(String nicknameBoxUser, String pwBoxUser) {
 		init();
 		User u = new User();
@@ -88,6 +124,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#updateUser(hdm.itprojekt.Socialmediapinnwand.shared.bo.User)
+	 */
 	@Override
 	public void updateUser(User u){
 		init();
@@ -95,6 +134,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 
  	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getReportPostsByUserId(int)
+	 */
 	@Override
 	public Vector<Post> getReportPostsByUserId(int pUserId)
 			throws IllegalArgumentException {
@@ -103,12 +145,18 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		return pMapper.getReportPostsByUserId(pUserId);
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllUsersById(int)
+	 */
 	@Override
 	public ArrayList<User> getAllUsersById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getPostsByUserId(int)
+	 */
 	@Override
 	public int getPostsByUserId(int user_id) {
 			init();
@@ -117,6 +165,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 			return postCount;
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getSubscriptionByUserId(int)
+	 */
 	@Override
 	public int getSubscriptionByUserId(int user_id) {
 			init();
@@ -126,6 +177,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 	
 	 
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getLikesByUserId(int)
+	 */
 	@Override
 	public int getLikesByUserId(int user_id) {
 			init();
@@ -133,6 +187,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 			return postCount;
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getOneUserIdByNickname(java.lang.String)
+	 */
 	@Override
 	public User getOneUserIdByNickname(String selectedNickname) {
 			init();
@@ -151,6 +208,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 			return a;
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllPostsByOneUserId(java.lang.Integer)
+	 */
 	@Override
 	public int getAllPostsByOneUserId(Integer user_id) {
 			init();
@@ -158,18 +218,27 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 			return postCount;
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getBoardIdFromUserID(int, java.lang.String)
+	 */
 	@Override
 	public Board getBoardIdFromUserID(int userId, String value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#createBoardByOwnUserId(int)
+	 */
 	@Override
 	public void createBoardByOwnUserId(int userID) {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#selectUserbyNickname(java.lang.String)
+	 */
 	@Override
 	public User selectUserbyNickname(String selectedNickname2) {
 		 
@@ -178,6 +247,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		return u;
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllCommentsByOnePostId(int)
+	 */
 	@Override
 	public ArrayList<Comment> getAllCommentsByOnePostId(int postIdTemp) {
 
@@ -192,12 +264,18 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		 
  	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllPostsByOneUserIdAndCount(java.lang.Integer)
+	 */
 	@Override
 	public int getAllPostsByOneUserIdAndCount(Integer user_id) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllPostsObjectsByOneUserId(int)
+	 */
 	@Override
 	public ArrayList<Post> getAllPostsObjectsByOneUserId(int id) {
  
@@ -213,12 +291,18 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		 
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#deleteSubscriberInformations(int)
+	 */
 	@Override
 	public void deleteSubscriberInformations(int from_user_id) {
 		bMapper.deleteSubscriberInformations(from_user_id);
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#createSubscriberInformations(int)
+	 */
 	@Override
 	public ArrayList<User> createSubscriberInformations(int from_user_id) {
 		init();
@@ -226,11 +310,17 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		return u;
 	}
 
- 	public void insertPost(Post p) {
+ 	/* (non-Javadoc)
+	  * @see hdm.itprojekt.Socialmediapinnwand.client.AService#insertPost(hdm.itprojekt.Socialmediapinnwand.shared.bo.Post)
+	  */
+	 public void insertPost(Post p) {
 		init();
 		pMapper.insertPost(p);		
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#setLikePostIterator(int, int)
+	 */
 	@Override
 	public void setLikePostIterator(int couterlike, int postIdTemp) {
 		init();
@@ -238,12 +328,18 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		 	
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#deletePostByPostid(java.lang.Integer)
+	 */
 	@Override
 	public void deletePostByPostid(Integer postIdTemp) {
 		init();
 		  pMapper.deletePostByPostid(postIdTemp);		
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getOneNicknameFromUserId(int)
+	 */
 	@Override
 	public User getOneNicknameFromUserId(int authorID) {
 		init();
@@ -252,6 +348,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
  		return u;
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#loadPostForEdit(int)
+	 */
 	@Override
 	public Post loadPostForEdit(int postId) {
 		 
@@ -261,6 +360,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		return p;
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#savePostForEdit(hdm.itprojekt.Socialmediapinnwand.shared.bo.Post)
+	 */
 	@Override
 	public void savePostForEdit(Post p) {
 	 
@@ -269,6 +371,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		
  	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllPostsObjectsByOnePostId(int)
+	 */
 	@Override
 	public ArrayList<Comment> getAllPostsObjectsByOnePostId(int postID) {
  
@@ -278,6 +383,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		 
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getCommentsByUserId(int)
+	 */
 	@Override
 	public int getCommentsByUserId(int user_id) {
 			init();
@@ -285,6 +393,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 			return postCount;
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#createCommentByPostID(hdm.itprojekt.Socialmediapinnwand.shared.bo.Comment)
+	 */
 	@Override
 	public void createCommentByPostID(Comment c) {
 		init();
@@ -292,6 +403,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#saveComment(hdm.itprojekt.Socialmediapinnwand.shared.bo.Comment)
+	 */
 	@Override
 	public void saveComment(Comment c) {
 		init();
@@ -299,6 +413,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#deleteCommentsByCommentID(int)
+	 */
 	@Override
 	public void deleteCommentsByCommentID(int commenId) {
 		 
@@ -307,6 +424,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#loadCommentsForEdit(int)
+	 */
 	@Override
 	public Comment loadCommentsForEdit(int commentId) {
 		init();
@@ -318,6 +438,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 
 	 
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#saveCommentsForEdit(hdm.itprojekt.Socialmediapinnwand.shared.bo.Comment)
+	 */
 	@Override
 	public void saveCommentsForEdit(Comment c) {
 		init();
@@ -325,12 +448,18 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 				
 	}
 	
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getUserIdByUserNickname(hdm.itprojekt.Socialmediapinnwand.shared.bo.User)
+	 */
 	@Override
 	public User getUserIdByUserNickname(User u) {
 		init();
 		return uMapper.getUserIdByUserNickname(u);
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#createSubscriptionByUserId(hdm.itprojekt.Socialmediapinnwand.shared.bo.Subscription)
+	 */
 	@Override
 	public void createSubscriptionByUserId(Subscription s) {
 		init();
@@ -338,6 +467,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllSubscriptionsById(hdm.itprojekt.Socialmediapinnwand.shared.bo.Subscription)
+	 */
 	@Override
 	public ArrayList<Subscription> getAllSubscriptionsById(Subscription sub) {
 		init();
@@ -351,6 +483,9 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 
 	}
 
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#deleteSubscriptionBySubscriptionID(hdm.itprojekt.Socialmediapinnwand.shared.bo.Subscription)
+	 */
 	@Override
 	public void deleteSubscriptionBySubscriptionID(Subscription s) {
 		init();
@@ -358,21 +493,50 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 
 	}
 
-	/*@Override
-	public void deleteUser(DeleteUser u, AsyncCallback<Void> asyncCallback) {
-	
-			init();
-			uMapper.deleteUser(u);
-		
-	}
-*/
-
-/*
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllLikesByUserId(int)
+	 */
 	@Override
-	public void createBoardByOwnUserId(int userID) {
- 		init();
-	//	Board postCount = pMapper.createBoardByUserID(userID);
- 	} 
-	
-	*/
+	public int getAllLikesByUserId(int userid) {
+		init();
+		 
+		int likeCount = pMapper.getLikeCountByUserId(userid);
+		return likeCount;
+	}
+
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getSubscriptionsByUserId(int)
+	 */
+	@Override
+	public int getSubscriptionsByUserId(int userid) {
+		init();
+		int subCount = pMapper.getSubscriptionsByUserId(userid);
+		return subCount;
+	}
+
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllCommentsCountByUserId(int)
+	 */
+	@Override
+	public int getAllCommentsCountByUserId(int userid) {
+		init();
+		int commentCount = pMapper.getAllCommentsCountByUserId(userid);
+		return commentCount;
+	}
+
+	/* (non-Javadoc)
+	 * @see hdm.itprojekt.Socialmediapinnwand.client.AService#getAllPostsByDateIntervall(int, java.lang.String, java.lang.String)
+	 */
+	@Override
+	public ArrayList<Post> getAllPostsByDateIntervall(int user_id, String fromDate,
+			String toDate) {
+		 
+		init();
+		ArrayList<Post>   p = pMapper.getAllPostsByDateIntervall(user_id,fromDate, toDate );
+		return p;
+		
+		 
+	}
+
+ 
 }

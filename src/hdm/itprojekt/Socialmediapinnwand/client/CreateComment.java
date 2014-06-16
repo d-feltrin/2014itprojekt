@@ -23,28 +23,49 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CreateComment.
+ */
 public class CreateComment extends DialogBox{
 	
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
+	
+	/** The post id. */
 	private int postId;
+ 
+ /** The p. */
  private Comment p = new Comment();
  
 //	int left = Window.getClientWidth() /2;
 //	int top = Window.getClientHeight() /2;
 	
-	private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
+	/** The selected nickname3. */
+private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
 
+	/** The a. */
 	DialogBox a = new DialogBox(true); 
+	
+	/** The save btn. */
 	Button saveBtn = new Button("Speichern");
+	
+	/** The close btn. */
 	Button closeBtn = new Button("Abbrechen");
+	
+	/** The edit post. */
 	TextArea editPost = new TextArea();
 
+	/** The headline. */
 	Label headline = new Label("Kommentar schreiben  ");
 	
+	/** The content panel. */
 	VerticalPanel contentPanel = new VerticalPanel();
 	
+	/** The wrap panel. */
 	private final VerticalPanel wrapPanel = new VerticalPanel();
 	
+	/** The Button panel. */
 	FlowPanel ButtonPanel = new FlowPanel();
 //	Cookies.getCookie("SessionBoardID", String.valueOf(result.getBoardId()));
 			  
@@ -52,8 +73,14 @@ public class CreateComment extends DialogBox{
 	
 	 
 	 
-	 int foo;
+	 /** The foo. */
+int foo;
 	 
+	/**
+	 * Instantiates a new creates the comment.
+	 *
+	 * @param postID the post id
+	 */
 	public CreateComment(int postID   ){
 		 
 		a.setGlassEnabled(true);
@@ -66,37 +93,19 @@ public class CreateComment extends DialogBox{
 
  
 
+/**
+ * Save comment for panel.
+ *
+ * @param postId the post id
+ * @param foo the foo
+ */
 public void saveCommentForPanel(int postId, int foo) {
 		
-		//Window.alert("  " + c.getText() + "Post-Test");
-	 	//Window.alert("  " + c.getId() + "PostId-Test");
+	 
 
 	 final String a2  ; 
 
  
-	 	 
-	/*
-	AsyncObj.getOneUserIdByNickname(a2 , new  AsyncCallback<User>(){
-
-		@Override
-		public void onFailure(Throwable caught) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onSuccess(User result) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-		// count all einträge select
-		 
-	 
-		});
-	
-	
-	*/
 	a2 = Cookies.getCookie("SessionUserIDEditor" ); 
 	 foo=Integer.parseInt(a2);
 	 
@@ -104,8 +113,7 @@ public void saveCommentForPanel(int postId, int foo) {
 	 	p.setPost_id(postId);
 	 	p.setUser_id(foo);
 	  
-//		Window.alert("  " + p.getPost() + "sadasda sd asd qa");
-	 //	Window.alert("  " + a.getPId() + "sadasda sd asd qa");
+ 
 	 	
 
 		AsyncObj.createCommentByPostID(p , new  AsyncCallback<Void>(){
@@ -134,6 +142,13 @@ public void saveCommentForPanel(int postId, int foo) {
 	
 
 
+/**
+ * Show create comment panel.
+ *
+ * @param postId the post id
+ * @param foo the foo
+ * @return the dialog box
+ */
 public DialogBox showCreateCommentPanel( final int postId, final int foo) {
 	
 	

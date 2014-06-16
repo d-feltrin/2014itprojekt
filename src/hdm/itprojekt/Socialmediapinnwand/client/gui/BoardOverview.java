@@ -25,16 +25,44 @@ import hdm.itprojekt.Socialmediapinnwand.shared.bo.Board;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.Post;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.User;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BoardOverview.
+ */
 public class BoardOverview  extends VerticalPanel {
+	
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
+	
+	/** The List of nicknames. */
 	final ListBox ListOfNicknames = new ListBox();
-	 final String s = "Eigene Pinnwand:";
+	 
+ 	/** The s. */
+ 	final String s = "Eigene Pinnwand:";
+	
+	/** The take user id. */
 	private int takeUserID = 0;
+	
+	/** The take nickname. */
 	private String takeNickname;
+	
+	/** The report6 table. */
 	FlexTable report6Table = new FlexTable();	
+	
+	/** The listboxindex. */
 	private final int listboxindex = ListOfNicknames.getSelectedIndex();
+	
+	/** The selected nickname2. */
 	private    String selectedNickname2; 
-	    String selectedNickname;
+	    
+    	/** The selected nickname. */
+    	String selectedNickname;
+	
+	/**
+	 * Instantiates a new board overview.
+	 *
+	 * @param takeUserID the take user id
+	 */
 	public BoardOverview(int takeUserID){
 		
 		this.takeUserID = takeUserID;
@@ -43,13 +71,26 @@ public class BoardOverview  extends VerticalPanel {
 		
 	}
 	
+	/**
+	 * Instantiates a new board overview.
+	 *
+	 * @param takeNickname the take nickname
+	 */
 	public BoardOverview(String takeNickname ){
 		this.takeNickname=takeNickname;
 	}
 	
+	/**
+	 * Instantiates a new board overview.
+	 */
 	public BoardOverview(  ){
  	}
 	
+	/**
+	 * Board overview.
+	 *
+	 * @return the string
+	 */
 	public String BoardOverview(  ){
 		return selectedNickname2;
 
@@ -58,6 +99,13 @@ public class BoardOverview  extends VerticalPanel {
 	//get selected board 
 	// sonst cookie select nickname
 	
+	/**
+	 * Gets the selected list box index.
+	 *
+	 * @param listOfNicknames the list of nicknames
+	 * @param selectedIndex the selected index
+	 * @return the selected list box index
+	 */
 	public String getSelectedListBoxIndex (ListBox listOfNicknames, int selectedIndex) {
  		String selectedNickname =  listOfNicknames.getItemText(selectedIndex);
  		
@@ -68,19 +116,32 @@ public class BoardOverview  extends VerticalPanel {
  		 
 	}
 	
+	/**
+	 * Gets the list box.
+	 *
+	 * @return the list box
+	 */
 	public String getListBox(){
 		
 		String selectedNickname3 = getSelectedListBoxIndex(ListOfNicknames, ListOfNicknames.getSelectedIndex());
-		Window.alert( "  was     "+ selectedNickname3);
+	 
 
 		return selectedNickname3;
 	}
  
+/**
+ * Gets the selected nickname.
+ *
+ * @return the selected nickname
+ */
 public String getSelectedNickname (){
 		
 		return selectedNickname2;
 	}
 	
+	/**
+	 * Load users.
+	 */
 	void loadUsers() {
 		// Dropdown aller vorhandenen User anzeigen
 		final String cookieNickname = Cookies.getCookie("SessionUserNicknameEditor");
@@ -190,6 +251,9 @@ public String getSelectedNickname (){
 
 	}	
 	
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad(){
 		HeadlineBar hB2 = new HeadlineBar();
 		hB2.setHeadlineInHeadlineBar("Herzlich Willkommen auf deiner Pinnwand" );
@@ -221,41 +285,7 @@ public String getSelectedNickname (){
 		 	RootPanel.get("content_wrap").add(bD);
 		}	
 		
-	//	String n = getSelectedListBoxIndex (ListOfNicknames, ListOfNicknames.getSelectedIndex()); 
-		
-		
-		//BoardPanel a = new BoardPanel( );
-	//	final int UserId = Integer.parseInt(Cookies.getCookie("SessionUserID"));
- 
-		 
-	/* ---	    final String cookieNickname = Cookies.getCookie("SessionUserNickname");
-			BoardPanel bP = new BoardPanel(); 
- 			RootPanel.get("content_wrap").add(HeadlineAllAll2);
-		  
- 			bP.createBoardByNickname(cookieNickname);
- 			RootPanel.get("content_wrap").add(bP);
-   */ 
- 			
- 			
-	/*	else if (UserId != 0 ){
-			
-			BoardPanel bP = new BoardPanel(); 
-			 
-			RootPanel.get("content_wrap").add(HeadlineAllAll2);
-			//bP.showBoardbyId(takeUserID);
-
-		 	Window.alert("waaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" +"  "+ takeUserID+"  "+ selectedNickname +"   "+ cookieNickname +"  "+ selectedNickname2  +"  "+n ); 
-		} else {
-			
-			
- 	  	Window.alert("sd" +"  "+ takeUserID+"  "+ selectedNickname +"   "+ cookieNickname +"  "+ selectedNickname2  +"  "+n ); 
-		}
-		*/
-		//createBoardByOwnUserId
-		
-		
-	//	RootPanel.get("content_wrap").clear();
- 	// 	RootPanel.get("content_wrap").add(a);
+	 
 	 	
 	}
 

@@ -18,30 +18,65 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CreateUser.
+ */
 public class CreateUser extends VerticalPanel {
 
 	// Definieren von ben�tigten Widgets
+	/** The user register. */
 	private final Button userRegister = new Button("Registrieren");
+	
+	/** The userfirstname. */
 	private final TextBox userfirstname = new TextBox();
  
+	/** The userlastname. */
 	private final TextBox userlastname = new TextBox();
+	
+	/** The user nickname. */
 	private final TextBox userNickname = new TextBox();
+	
+	/** The user email. */
 	private final TextBox userEmail = new TextBox();
+	
+	/** The user password. */
 	private final TextBox userPassword = new PasswordTextBox();
+	
+	/** The back btn. */
 	private final Button backBtn = new Button("zurück zum Login");
+	
+	/** The vert panel1. */
 	private final VerticalPanel vertPanel1 = new VerticalPanel();
+	
+	/** The vert panel2. */
 	private final VerticalPanel vertPanel2 = new VerticalPanel();
+	
+	/** The vert panel3. */
 	private final VerticalPanel vertPanel3 = new VerticalPanel();
+	
+	/** The Cr user headline. */
 	final Label CrUserHeadline = new Label("Regestrieren Sie sich als neuer User ");
+    
+    /** The image. */
     final Image image = new Image();
 
 	// Wie kann man das hier bezeichnen?
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
+
+/** The u. */
 private  User  u = new User ();
 
+	/**
+	 * Instantiates a new creates the user.
+	 */
 	public CreateUser() {
 	}
 
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad() {
 		/*Style Sets*/
 		super.onLoad();
@@ -72,14 +107,7 @@ private  User  u = new User ();
 		fT.setWidget(2,0,userPassword);
 		fT.setWidget(2,1,userRegister);
  		
-		// Widgets dem Panel zuordnen
-		/*
-		vertPanel2.add(userfirstname);
-		vertPanel2.add(userlastname);
-		vertPanel2.add(userNickname);
-		vertPanel2.add(userEmail);
-		vertPanel2.add(userPassword);
-		vertPanel2.add(userRegister);*/
+ 
 		vertPanel2.add(CrUserHeadline);
 		vertPanel2.add(fT);
 		

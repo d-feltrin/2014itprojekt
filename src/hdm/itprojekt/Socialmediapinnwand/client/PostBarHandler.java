@@ -21,39 +21,78 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PostBarHandler.
+ */
 public class PostBarHandler   extends Composite implements ClickHandler {
 	 
+		/** The Async obj. */
 		private final AServiceAsync AsyncObj = GWT.create(AService.class);
 		
+		/** The author id. */
 		private int authorID;
+		
+		/** The author nickname. */
 		private String authorNickname;
+		
+		/** The counter. */
 		private int counter;
+		
+		/** The ownuser id. */
 		private int ownuserID;
+		
+		/** The post id. */
 		private int	postID;
+		
+		/** The commen id. */
 		private int	commenId;
+		
+		/** The selected nickname3. */
 		private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
- 		private String message; 
+ 		
+		 /** The message. */
+		 private String message; 
 		//Comment c = new Comment();
+		/** The test. */
 		String test  = "fuck";
 
 //DialogBox affe = new DialogBox(true);
 		  
-		FlowPanel fp = new FlowPanel();
+		/** The fp. */
+FlowPanel fp = new FlowPanel();
  
+	  	/** The session editor. */
 	  	String sessionEditor = Cookies.getCookie("SessionUserNicknameEditor");
 	  	//	String sessionSelectItem = Cookies.getCookie("SessionUserNicknameEditor");
 
+	  	/** The Post delete btn. */
 	  	Button PostDeleteBtn    = new Button("d");
+	  	
+	  	/** The Post edit btn. */
 	  	Button PostEditBtn = new Button("e" );
+	  	
+	  	/** The Post like btn. */
 	  	Button PostLikeBtn = new Button("+");
+	  	
+	  	/** The Post comment btn. */
 	  	Button PostCommentBtn = new Button("c");
 	  	
 	  	
+	  	/** The Co delete btn. */
 	  	Button CoDeleteBtn    = new Button("d");
+	  	
+	  	/** The Co edit btn. */
 	  	Button CoEditBtn = new Button("e" );
 	
 		// public PostBarHandler(int authorID, int ownuserID, int postID, int counter ) {
-			 public PostBarHandler(Post p, int ownuser ) {
+			 /**
+		 * Instantiates a new post bar handler.
+		 *
+		 * @param p the p
+		 * @param ownuser the ownuser
+		 */
+		public PostBarHandler(Post p, int ownuser ) {
 				 
 
 			    this.authorID = p.getPosr_id();
@@ -63,13 +102,7 @@ public class PostBarHandler   extends Composite implements ClickHandler {
 			    this.message = p.getPost();
  			  
 				  
-			    
-		//	  this.editPost.setPId(p.getPId());
-			   /*  this.editPost.setPost(p.getPost());
-			    this.editPost.setTimestamp(p.getTimestamp());
-			    this.editPost.setPosr_id(p.getPId());
-			    this.editPost.setUser_id(p.getUser_id());
-				*/
+	 
 			 
 
 				if(authorID == ownuserID ){
@@ -103,11 +136,19 @@ public class PostBarHandler   extends Composite implements ClickHandler {
 				}
 			  }
 		 	
-		 public PostBarHandler() {
+		 /**
+ 		 * Instantiates a new post bar handler.
+ 		 */
+ 		public PostBarHandler() {
 				 
 		  }
 		 
-		 public PostBarHandler(int commentid){
+		 /**
+ 		 * Instantiates a new post bar handler.
+ 		 *
+ 		 * @param commentid the commentid
+ 		 */
+ 		public PostBarHandler(int commentid){
 			 
 			 this.commenId=commentid;
 			 
@@ -116,31 +157,11 @@ public class PostBarHandler   extends Composite implements ClickHandler {
 			 
 		 }
 			  
-			  /*public String ShowNickname(int authorID ){
-				  AsyncObj.getOneNicknameFromUserId(authorID, new  AsyncCallback<String>(){
-						// count all einträge select
-						@Override
-						public void onFailure(Throwable caught) {
-							// TODO Auto-generated method stub
-						}
-					 
-						@Override
-						public void onSuccess(String result) {
+	 
 
-							String u ; 
-							u = result;
-							setAuthorNickname(u);
-					 
-							Window.alert(authorNickname);
-						}
-						});
-				  
-				  return authorNickname;
-				 
-			  }
-		 
+			/* (non-Javadoc)
+			 * @see com.google.gwt.event.dom.client.ClickHandler#onClick(com.google.gwt.event.dom.client.ClickEvent)
 			 */
-
 			@Override
 			public void onClick(ClickEvent event) {
 					  
@@ -245,10 +266,20 @@ public class PostBarHandler   extends Composite implements ClickHandler {
 					  
 			}
 
+			/**
+			 * Gets the author nickname.
+			 *
+			 * @return the author nickname
+			 */
 			public String getAuthorNickname() {
 				return authorNickname;
 			}
 
+			/**
+			 * Sets the author nickname.
+			 *
+			 * @param authorNickname the new author nickname
+			 */
 			public void setAuthorNickname(String authorNickname) {
 				this.authorNickname = authorNickname;
 			}

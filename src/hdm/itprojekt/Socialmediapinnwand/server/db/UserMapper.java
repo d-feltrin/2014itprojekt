@@ -9,13 +9,29 @@ import com.google.gwt.user.client.Window;
 import hdm.itprojekt.Socialmediapinnwand.server.db.DBConnection;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class UserMapper.
+ */
 public class UserMapper {
+
+/** The user mapper. */
 private static UserMapper userMapper = null;
+
+/** The con. */
 public Connection con = DBConnection.connection();
 
+/**
+ * Instantiates a new user mapper.
+ */
 protected UserMapper() {
 }
 
+/**
+ * User mapper.
+ *
+ * @return the user mapper
+ */
 public static UserMapper userMapper() {
 	if (userMapper == null) {
 		userMapper = new UserMapper(); 
@@ -23,6 +39,11 @@ public static UserMapper userMapper() {
 	return userMapper;
 }
 
+/**
+ * Insert user.
+ *
+ * @param u the u
+ */
 public void insertUser(User u) {
 	Connection con = DBConnection.connection();
 	try {
@@ -48,6 +69,11 @@ public void insertUser(User u) {
 	}
 }
 
+/**
+ * Update user.
+ *
+ * @param u the u
+ */
 public void updateUser(User u) {
 	
 	Connection con = DBConnection.connection();
@@ -74,6 +100,12 @@ public void updateUser(User u) {
 	
 }
 
+/**
+ * Check user duplicate.
+ *
+ * @param u the u
+ * @return the boolean
+ */
 public Boolean checkUserDuplicate(User u) {
 	Connection con = DBConnection.connection();
 	Boolean  result = false;
@@ -96,6 +128,11 @@ public Boolean checkUserDuplicate(User u) {
 	return result;
 }
 
+/**
+ * Gets the all users.
+ *
+ * @return the all users
+ */
 public ArrayList<User> getAllUsers() {
 	Connection con = DBConnection.connection();
 	ArrayList<User> resultList = new ArrayList<>();
@@ -120,15 +157,19 @@ public ArrayList<User> getAllUsers() {
 	return resultList;
 }
 
+/**
+ * Gets the all posts by one user id.
+ *
+ * @param selectedNickname2 the selected nickname2
+ * @return the all posts by one user id
+ */
 public User getAllPostsByOneUserId(String selectedNickname2) {
 	Connection con = DBConnection.connection();
 	User u = new User(); // Cr
 	try {
 		Statement state = con.createStatement();
 		 ResultSet result = state.executeQuery("SELECT * FROM `User`  WHERE `nickname` = '" + selectedNickname2  + "';");
-
-		//ResultSet result = state.executeQuery("SELECT `nickname` FROM `User` WHERE`nickname` = '"+   selectedNickname2 + "'"  );
-	 //SELECT `nickname` FROM `User` WHERE `nickname` = "+selectedNickname2+"
+ 
 		while (result.next()) {
  										// with values from database
 			u.setUserId(result.getInt("id"));
@@ -146,27 +187,30 @@ public User getAllPostsByOneUserId(String selectedNickname2) {
 	return u;
 }
 
+/**
+ * Delete user.
+ *
+ * @param u the u
+ */
 public void deleteUser(User u) {
 	//Hier Methode, um einen User zu löschen
 	Connection con = DBConnection.connection();
 	try {
 		Statement state = con.createStatement();
 		state.executeUpdate("DELETE   FROM `User` WHERE `id` = '" + u.getId()+"';" );
-		//String sqlquery = ;
-		//	String sqlquery2 = "DELETE FROM Post WHERE id = '" + u.getId() +"'";
-		//	String sqlquery2 = "DELETE FROM Comment WHERE id = '" + u.getId() +"'";
-		//	String sqlquery2 = "DELETE FROM Subscription WHERE id = '" + u.getId() +"'";
-		//	String sqlquery2 = "DELETE FROM Like WHERE id = '" + u.getId() +"'";
-		//	String sqlquery2 = "DELETE FROM Board WHERE id = '" + u.getId() +"'";
-
-	//	state.executeUpdate(sqlquery);
-		//Window.alert(""+ sqlquery);
+ 
 
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 }
 
+/**
+ * Gets the one nickname from user id.
+ *
+ * @param authorID the author id
+ * @return the one nickname from user id
+ */
 public User getOneNicknameFromUserId (int authorID) {
 	
 	User u = new User () ;
@@ -188,6 +232,12 @@ public User getOneNicknameFromUserId (int authorID) {
 	
 }
 
+/**
+ * Gets the user id by user nickname.
+ *
+ * @param user the user
+ * @return the user id by user nickname
+ */
 public User getUserIdByUserNickname(User user) {
 	Connection con = DBConnection.connection();
 	User u = new User();
@@ -215,33 +265,7 @@ public User getUserIdByUserNickname(User user) {
 	}
 	return u;
 }
-
-/*
- *Hier nicht notwendig oder? Weil es ist ja genau dieselbe Funktion wie insertUser...
-public void editUser(User u) {
-	Connection con = DBConnection.connection();
-	try {
-		Statement state = con.createStatement();
-		String sqlquery = "EDIT INTO User (firstname, lastname, nickname, email, password) VALUES ("
-				+ "'"
-				+ u.getfirstname()
-				+ "','"
-				+ u.getlastname()
-				+ "','"
-				+ u.getNickname()
-				+ "', '"
-				+ u.getEMailAdress()
-				+ "','"
-				+ u.getPassword() +
-				"') ;";
-		state.executeUpdate(sqlquery);
-		//Window.alert(""+ sqlquery);
  
-
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-}
-*/
+ 
 
 }

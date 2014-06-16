@@ -29,29 +29,54 @@ import hdm.itprojekt.Socialmediapinnwand.client.gui.OneUserByOneInfoObjects;
 import hdm.itprojekt.Socialmediapinnwand.client.gui.ReportOverview;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.User;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoginEntry.
+ */
 public class LoginEntry extends AbsolutePanel {
 	
+	/** The user. */
 	private  User user = new User();
  
+	/** The content panel. */
 	final VerticalPanel contentPanel = new VerticalPanel();
- 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
+ 	
+	 /** The Async obj. */
+	 private final AServiceAsync AsyncObj = GWT.create(AService.class);
 
+	/** The User main menu. */
 	final MenuBar UserMainMenu = new MenuBar();
 
+	/**
+	 * The Class SocialmediapinnwandEditor.
+	 */
 	public class SocialmediapinnwandEditor extends VerticalPanel {
 			
+		/** The user2. */
 		private User user2;
 
+			/**
+			 * Instantiates a new socialmediapinnwand editor.
+			 */
 			public SocialmediapinnwandEditor() {
 			}
 
+	/**
+	 * Sets the user object.
+	 *
+	 * @param user2 the new user object
+	 */
 	public void setUserObject(User user2) {
 		this.user2 = user2;
 	}
 
+	/** The User main menu btn. */
 	MenuBar UserMainMenuBtn = new MenuBar(true);
+	
+	/** The User main menu. */
 	MenuBar UserMainMenu = new MenuBar();
 
+	/** The logout. */
 	Command logout = new Command() {
 		public void execute() {
 			Cookies.removeCookie("SessionUserNicknameEditor");
@@ -67,7 +92,8 @@ public class LoginEntry extends AbsolutePanel {
 	};
 	
 	// OwnWall-Command f�r Menubar-Unterpunkt "Eigene Pinnwand" erstellen
-			Command ownWall = new Command() {
+			/** The own wall. */
+	Command ownWall = new Command() {
 				public void execute() {
 					RootPanel.get("content_wrap").clear();
 	   				
@@ -93,6 +119,7 @@ public class LoginEntry extends AbsolutePanel {
 
 			// Bearbeiten-Command für Menubar-Unterpunkt "Account bearbeiten"
 			// erstellen
+			/** The edit user. */
 			Command editUser = new Command() {
 				public void execute() {
 					RootPanel.get("content_wrap").clear();
@@ -101,6 +128,9 @@ public class LoginEntry extends AbsolutePanel {
 				}
 			};
 			
+			/**
+			 * Sets the user menu items.
+			 */
 			public void setUserMenuItems(){
 				// Der Menubar folgende Unterpunkte zuordnen
 				UserMainMenuBtn.addItem("Eigene Pinnwand", ownWall);
@@ -112,6 +142,9 @@ public class LoginEntry extends AbsolutePanel {
 
 			}
 
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad() {
 		
 		// NEw BOARD PANEL 
@@ -127,21 +160,50 @@ public class LoginEntry extends AbsolutePanel {
 	 
 	}
 	
+	/**
+	 * The Class SocialmediapinnwandReport.
+	 */
 	public class SocialmediapinnwandReport extends VerticalPanel {
+		
+		/** The user. */
 		private User user = new User();
+		
+		/** The content panel. */
 		final VerticalPanel contentPanel = new VerticalPanel();
+		
+		/** The Test button. */
 		final Button TestButton = new Button("Test");
+		
+		/** The Async obj. */
 		private final AServiceAsync AsyncObj = GWT.create(AService.class);
+		
+		/** The List of nicknames. */
 		final ListBox ListOfNicknames = new ListBox();
+		
+		/** The User main menu. */
 		final MenuBar UserMainMenu = new MenuBar();
 		
+	 	/** The all reports panel. */
 	 	final HorizontalPanel allReportsPanel = new HorizontalPanel();	
+		
+		/**
+		 * Instantiates a new socialmediapinnwand report.
+		 */
 		public SocialmediapinnwandReport() {
 		}
+		
+		/**
+		 * Sets the user object.
+		 *
+		 * @param user the new user object
+		 */
 		public void setUserObject(User user) {
 			this.user = user;
 		}
 
+		/* (non-Javadoc)
+		 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+		 */
 		public void onLoad() {
 
 			RootPanel.get("content_wrap").add(new ReportOverview());
@@ -163,7 +225,7 @@ public class LoginEntry extends AbsolutePanel {
 					hB1.setHeadlineInHeadlineBar("Toplisten");
 					HeadlinesBarReport HeadlinesBarEditor1 =  hB1.new HeadlinesBarReport();
 	 				RootPanel.get("content_wrap").add(HeadlinesBarEditor1);
-	 			// 	RootPanel.get("content_wrap").add(new AllUsersbByAllInfoObject());
+	 			   	RootPanel.get("content_wrap").add(new AllUsersbByAllInfoObject());
 	 				//Window.alert("aas");
 					
 				}
@@ -176,7 +238,7 @@ public class LoginEntry extends AbsolutePanel {
 					hB3.setHeadlineInHeadlineBar("User Statistiken");
 					HeadlinesBarReport HeadlinesBarEditor2 =  hB3.new HeadlinesBarReport();
 	 				RootPanel.get("content_wrap").add(HeadlinesBarEditor2);
-	 		//	 	RootPanel.get("content_wrap").add(new OneUserByOneInfoObjects());
+	 		 	 	RootPanel.get("content_wrap").add(new OneUserByOneInfoObjects());
 	 				//Window.alert("ttttaass");
 	 	
 				}

@@ -21,29 +21,55 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CommentBarHandler.
+ */
 public class CommentBarHandler   extends Composite implements ClickHandler {
 	 
+		/** The Async obj. */
 		private final AServiceAsync AsyncObj = GWT.create(AService.class);
 		
- 		private String authorNickname;
+ 		/** The author nickname. */
+		 private String authorNickname;
+		
+		/** The counter. */
 		private int counter;
+		
+		/** The ownuser id. */
 		private int ownuserID;
+		
+		/** The post id. */
 		private int	postID;
+		
+		/** The comment_userid. */
 		private int comment_userid;
+		
+		/** The commen id. */
 		private int	commenId;
+		
+		/** The selected nickname3. */
 		private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
- 		private String message; 
+ 		
+		 /** The message. */
+		 private String message; 
 		//Comment c = new Comment();
+		/** The test. */
 		String test  = "fuck";
 
 //DialogBox affe = new DialogBox(true);
 		  
-		FlowPanel fp = new FlowPanel();
+		/** The fp. */
+FlowPanel fp = new FlowPanel();
  
+	  	/** The session editor. */
 	  	String sessionEditor = Cookies.getCookie("SessionUserNicknameEditor");
 	  	//	String sessionSelectItem = Cookies.getCookie("SessionUserNicknameEditor");
 
+	  	/** The Co delete btn. */
 	  	Button CoDeleteBtn    = new Button("d");
+	  	
+	  	/** The Co edit btn. */
 	  	Button CoEditBtn = new Button("e" );
 	 
 	  	
@@ -51,29 +77,21 @@ public class CommentBarHandler   extends Composite implements ClickHandler {
 	  	 
  	
 		// public PostBarHandler(int authorID, int ownuserID, int postID, int counter ) {
-	 public CommentBarHandler(int commentid, int comment_userid, int ownuser){
+	 /**
+		 * Instantiates a new comment bar handler.
+		 *
+		 * @param commentid the commentid
+		 * @param comment_userid the comment_userid
+		 * @param ownuser the ownuser
+		 */
+		public CommentBarHandler(int commentid, int comment_userid, int ownuser){
 			 
 			 this.commenId=commentid;
 			 this.ownuserID =ownuser;
 			 this.comment_userid=comment_userid;
-			   /* this.authorID = c.getUser_id();
- 			    this.ownuserID = ownuser;
-			    this.postID = p.getPId();
-			    this.message = p.getPost();
- 			  */
-				  
-			    
-		//	  this.editPost.setPId(p.getPId());
-			   /*  this.editPost.setPost(p.getPost());
-			    this.editPost.setTimestamp(p.getTimestamp());
-			    this.editPost.setPosr_id(p.getPId());
-			    this.editPost.setUser_id(p.getUser_id());
-				*/
-			 
+		 
 
 				if(ownuserID == comment_userid ){
-					
-				//	if(sessionEditor.toUpperCase().equals(selectedNickname3.toUpperCase())){
 				 
 				    fp.add(CoDeleteBtn);
 				    fp.add(CoEditBtn);
@@ -92,7 +110,10 @@ public class CommentBarHandler   extends Composite implements ClickHandler {
 				}
 			  }
 		 	
-		 public CommentBarHandler() {
+		 /**
+ 		 * Instantiates a new comment bar handler.
+ 		 */
+ 		public CommentBarHandler() {
 				 
 		  }
 		 
@@ -100,6 +121,9 @@ public class CommentBarHandler   extends Composite implements ClickHandler {
 			  
 		 
 
+			/* (non-Javadoc)
+			 * @see com.google.gwt.event.dom.client.ClickHandler#onClick(com.google.gwt.event.dom.client.ClickEvent)
+			 */
 			@Override
 			public void onClick(ClickEvent event) {
 					  
@@ -124,30 +148,34 @@ public class CommentBarHandler   extends Composite implements ClickHandler {
 							}
 							}); 	
 					   
-					  
-					  
-					  
-										 
-										  
+					   				  
 									  }
 					  
 				  else if (sender == CoEditBtn) {
 					 
 					  
 					  EditComment a = new EditComment(commenId );
-
-										   
- 										 
+ 					 
 										  
 									  }
-					  
+					   
 					  
 			}
 
+			/**
+			 * Gets the author nickname.
+			 *
+			 * @return the author nickname
+			 */
 			public String getAuthorNickname() {
 				return authorNickname;
 			}
 
+			/**
+			 * Sets the author nickname.
+			 *
+			 * @param authorNickname the new author nickname
+			 */
 			public void setAuthorNickname(String authorNickname) {
 				this.authorNickname = authorNickname;
 			}

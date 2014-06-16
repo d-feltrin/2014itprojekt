@@ -14,8 +14,15 @@ import hdm.itprojekt.Socialmediapinnwand.client.LoginEntry.SocialmediapinnwandEd
 import hdm.itprojekt.Socialmediapinnwand.client.LoginEntry.SocialmediapinnwandReport;
 import hdm.itprojekt.Socialmediapinnwand.client.LoginPanels.LoginDasboard;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Socialmediapinnwand.
+ */
 public class Socialmediapinnwand implements EntryPoint      {
 
+	/* (non-Javadoc)
+	 * @see com.google.gwt.core.client.EntryPoint#onModuleLoad()
+	 */
 	public void onModuleLoad() {
 		
 		 /*
@@ -30,15 +37,15 @@ public class Socialmediapinnwand implements EntryPoint      {
 		String sessionReport = Cookies.getCookie("SessionUserNicknameReport");
 		
 		RootPanel.get("Impressum").add(new Impressum());
-		 	 
+	/*	 	 
  	 if(sessionEditor != null ) {
 		LoginEntry a = new LoginEntry();
 			SocialmediapinnwandEditor b = a.new SocialmediapinnwandEditor();
 			RootPanel.get("content_wrap").clear();
 
 		 	RootPanel.get("content_wrap").add(b); 		
-			} 
- 	 else if(sessionReport != null){
+			} */
+ 	   if(sessionReport != null){
 			LoginEntry a1 = new LoginEntry();
 			SocialmediapinnwandReport b1 = a1.new SocialmediapinnwandReport();
 			RootPanel.get("content_wrap").clear();

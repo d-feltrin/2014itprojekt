@@ -6,8 +6,15 @@ import hdm.itprojekt.Socialmediapinnwand.client.HeadlineBar.HeadlinesBarReport;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ReportOverview.
+ */
 public class ReportOverview extends VerticalPanel {
 
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad(){
 		
 		//HeadlineBar

@@ -21,41 +21,76 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+	// TODO: Auto-generated Javadoc
+/**
+	 * The Class EditUser.
+	 */
 	public class EditUser extends VerticalPanel {
  
 		//GUI-Elemente für das Ändern der Account-Daten
+		/** The save edit. */
 		private final Button saveEdit = new Button("Daten Speichern");
 		
 		//GUI für das Löschen
+		/** The delete button. */
 		private final Button deleteButton = new Button("Account löschen");
+		
+		/** The delete headline. */
 		private final Label deleteHeadline = new Label("Um den Account unwiderruflich zu löschen, bitte hier bestätigen:");
 		
 		//private final Button backBtn = new Button("zurück zum Login");
+		/** The edit firstname. */
 		private final TextBox editFirstname = new TextBox();
+		
+		/** The edit lastname. */
 		private final TextBox editLastname = new TextBox();
+		
+		/** The edit nickname. */
 		private final TextBox editNickname = new TextBox();
+		
+		/** The edit email. */
 		private final TextBox editEmail = new TextBox();
+		
+		/** The edit password. */
 		private final PasswordTextBox editPassword = new PasswordTextBox();
+		
+		/** The vert panel1. */
 		private final VerticalPanel vertPanel1 = new VerticalPanel();
+		
+		/** The vert panel2. */
 		private final VerticalPanel vertPanel2 = new VerticalPanel();
+		
+		/** The vert panel3. */
 		private final VerticalPanel vertPanel3 = new VerticalPanel();
 		
 		//Panel 4, welches die Löschen-GUI aufnimmt
+		/** The hor panel4. */
 		private final HorizontalPanel horPanel4 = new HorizontalPanel();
 		
+		/** The Cr user headline. */
 		final Label CrUserHeadline = new Label("Beearbeiten oder löschen Sie Ihren Account");
-	    final Image image = new Image();
+	    
+    	/** The image. */
+    	final Image image = new Image();
  
 		//Ein neues AsyncObject wird instantiiert
+		/** The Async obj. */
 		private final AServiceAsync AsyncObj = GWT.create(AService.class);
 		
 		//Ein Objekt vom Typ User wird erstellt
+		/** The u. */
 		private User u;
 
+		/**
+		 * Instantiates a new edits the user.
+		 */
 		public EditUser() {
 		}
 
 		//Elemente/Methoden, die beim Start der Klasse erstellt werden sollen
+		/* (non-Javadoc)
+		 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+		 */
 		public void onLoad() {
 			/*Style Sets*/
 			CrUserHeadline.setStylePrimaryName("CrUserHeadline");

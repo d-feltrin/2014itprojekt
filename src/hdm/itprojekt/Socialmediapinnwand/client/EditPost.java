@@ -22,33 +22,63 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EditPost.
+ */
 public class EditPost extends DialogBox{
 	
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
+	
+	/** The post id. */
 	private int postId;
+	
+	/** The p. */
 	private Post p = new Post();
 	
 //	int left = Window.getClientWidth() /2;
 //	int top = Window.getClientHeight() /2;
 	
-	private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
+	/** The selected nickname3. */
+private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
 
+	/** The a. */
 	DialogBox a = new DialogBox(true); 
+	
+	/** The save btn. */
 	Button saveBtn = new Button("Speichern");
+	
+	/** The close btn. */
 	Button closeBtn = new Button("Abbrechen");
+	
+	/** The edit post. */
 	TextArea editPost = new TextArea();
 
+	/** The headline. */
 	Label headline = new Label("Post bearbeiten");
 	
+	/** The content panel. */
 	VerticalPanel contentPanel = new VerticalPanel();
 	
+	/** The wrap panel. */
 	private final VerticalPanel wrapPanel = new VerticalPanel();
 	
+	/** The Button panel. */
 	FlowPanel ButtonPanel = new FlowPanel();
 	
 
 
 	
+	/**
+	 * Instantiates a new edits the post.
+	 *
+	 * @param postID the post id
+	 * @param counter the counter
+	 * @param ownuserID the ownuser id
+	 * @param authorID the author id
+	 * @param message the message
+	 */
 	public EditPost(int postID, int counter, int ownuserID, int authorID, String message ){
   
 		this.p.setPId(postID);
@@ -61,13 +91,7 @@ public class EditPost extends DialogBox{
 		a.setGlassEnabled(true);
 		a.show();
 		a.center();
-	//	a.setPopupPosition(left, top);
-
-		//  editPost.setPixelSize(400, 350);
-	//	Window.alert("  " + p.getPost() + "Post-Test");
-	 //	Window.alert(" -> " + p .getPId() +"  " + postId + "PostId-Test");
 	 
-	 	 
 		
 		loadPostForEditPanel(postId);
  
@@ -75,6 +99,11 @@ public class EditPost extends DialogBox{
 		setWidget(wrapPanel);
 	}
 
+/**
+ * Save post for edit panel.
+ *
+ * @param p the p
+ */
 public void savePostForEditPanel(Post p) {
 	
 	Window.alert("  " + p.getPost() + "Post-Test");
@@ -85,10 +114,7 @@ public void savePostForEditPanel(Post p) {
  
  	p.setPost(editPost.getText());
   
-//	Window.alert("  " + p.getPost() + "sadasda sd asd qa");
- //	Window.alert("  " + a.getPId() + "sadasda sd asd qa");
- 	
-
+ 
 	AsyncObj.savePostForEdit(p , new  AsyncCallback<Void>(){
 		
 		// count all einträge select
@@ -105,6 +131,12 @@ public void savePostForEditPanel(Post p) {
 	
 }
 	
+/**
+ * Load post for edit panel.
+ *
+ * @param postId the post id
+ * @return the post
+ */
 public Post loadPostForEditPanel( int postId) {
 	
 	

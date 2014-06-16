@@ -28,58 +28,107 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BoardPanel.
+ */
 public class BoardPanel extends HorizontalPanel {
 	
 
+	/** The post vp headline. */
 	final Label postVpHeadline = new Label("was");
+	
+	/** The post vp subline. */
 	final Label postVpSubline = new Label("In diesem Ranking werden Ihnen die User sortiert angezeigt, die am Meisten Beiträge verfasst haben. ");
+	
+	/** The Flex table temp. */
 	final  private FlexTable FlexTableTemp = new FlexTable();
+	
+	/** The counter. */
 	int counter = 0;
 
+	/** The from_ user id. */
 	String  from_UserId = Cookies.getCookie("SessionUserNicknameEditor");
+	
+	/** The ownuser id. */
 	int  ownuserID = Integer.parseInt(Cookies.getCookie("SessionUserIDEditor"));
 
- 	int postID =0;   
+ 	/** The post id. */
+	 int postID =0;   
+	
+	/** The counter0. */
 	int counter0 =0;
+	
+	/** The likecounter. */
 	int likecounter =1;
+	
+	/** The counter1. */
 	int counter1 =2;
+	
+	/** The author nickname. */
 	String authorNickname;
+	
+	/** The boardcontent. */
 	VerticalPanel boardcontent = new VerticalPanel();
+	
+	/** The report8table. */
 	FlexTable report8table = new FlexTable();
-	/*Async Counter*/
-	/*int d = 1;
-  	int d2 = 2;*/
+ 
+	/** The d3. */
 	int d3 = 3;
+		
+		/** The d4. */
 		int d4 = 4;
+		
+		/** The po. */
 		Post po = new Post();
+		
+		/** The itemp. */
 		int itemp = 0;
 		
+	/** The board hori panel1 tab. */
 	final HorizontalPanel boardHoriPanel1Tab = new HorizontalPanel();
+	
+	/** The left vp. */
 	final VerticalPanel leftVp = new VerticalPanel();
+	
+	/** The headline abo. */
 	Label headlineAbo = new Label("Alle Abonennten der Pinnwand");
+	
+	/** The left vp sub profil info. */
 	final VerticalPanel leftVpSubProfilInfo = new VerticalPanel();
+	
+	/** The left vp sub abo info. */
 	final VerticalPanel leftVpSubAboInfo = new VerticalPanel();
+	
+	/** The Board abo btn. */
 	final Button BoardAboBtn = new Button("Dieses Board abbonieren");
 	/*Felxtable All POst */
+	/** The counter post table. */
 	Integer counterPostTable ;
 			
+	/** The couterlike. */
 	int couterlike ;
+	
+	/** The author id. */
 	int authorID ;
 	
+	/** The right vp. */
 	final VerticalPanel rightVp = new VerticalPanel();
 	
+	/**
+	 * The Class BoardPanelDasboard.
+	 */
 	public class BoardPanelDasboard extends VerticalPanel {
- 		private final AServiceAsync AsyncObj = GWT.create(AService.class);
+ 		
+		 /** The Async obj. */
+		 private final AServiceAsync AsyncObj = GWT.create(AService.class);
 
-	/*
-		public Board showOwnBoard (){
-			Label a = new Label("sadasd");
-			RootPanel.get("content_wrap").add(a);
-			return null;
-			
-		}
-		*/
-		
+		/**
+		 * Creates the board by own user id.
+		 *
+		 * @param UserId the user id
+		 */
 		public void createBoardByOwnUserId (int UserId){
 			 
 			Integer UserID = UserId; 
@@ -89,18 +138,19 @@ public class BoardPanel extends HorizontalPanel {
 				}
 				@Override
 				public void onSuccess(Void result) {
-					// TODO Auto-generated method stub
 				}
 			 }); 
 		}
 		
+		/* (non-Javadoc)
+		 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+		 */
 		public void onLoad(){
 		
 			postVpHeadline.setStylePrimaryName("postVpHeadline");
 			postVpSubline.setStylePrimaryName("postVpSubline");
 	 		report8table.addStyleName("report7table");
 	
-	 	//	rightVp.add(report7table);
 	 		
 	 		boardHoriPanel1Tab.add(leftVp);
 	 		boardHoriPanel1Tab.add(rightVp);
@@ -108,37 +158,46 @@ public class BoardPanel extends HorizontalPanel {
 	
 			RootPanel.get("content_wrap").add(boardHoriPanel1Tab); 
 	 
-		/*	if (selectedNickname == cookieNickname ){
-				
-				Board ownBoard = new Board();
-			//	Board.getOwnBoard();
-				Window.alert("ownBoard"); 
-			}
-			else {
-				Window.alert("anderesBoard"); 
-	
-			} 
-		
-	 */
 			
 		}
 	
 }
 	
+	/**
+	 * The Class createOwnBoardByNicknamePanel.
+	 */
 	public class createOwnBoardByNicknamePanel extends VerticalPanel {
+		
+		/** The user session cookie id. */
 		final int userSessionCookieID = Integer.parseInt(Cookies
 				.getCookie("SessionUserIDEditor"));
+		
+		/** The user subscription cookie. */
 		final String userSubscriptionCookie = Cookies
 				.getCookie("SelectedListItem");
- 		private final AServiceAsync AsyncObj = GWT.create(AService.class);
- 		private String  cookienameTemp;
+ 		
+		 /** The Async obj. */
+		 private final AServiceAsync AsyncObj = GWT.create(AService.class);
+ 		
+		 /** The cookiename temp. */
+		 private String  cookienameTemp;
  		
  		
+	/**
+	 * Instantiates a new creates the own board by nickname panel.
+	 *
+	 * @param cookiename the cookiename
+	 */
 	public createOwnBoardByNicknamePanel(String cookiename) {
 	
 		this.cookienameTemp = cookiename;
 	}
 		
+	/**
+	 * Creates the user informations.
+	 *
+	 * @param cookienameTemp the cookiename temp
+	 */
 	public void createUserInformations(String cookienameTemp) {
 		 AsyncObj.selectUserbyNickname(cookienameTemp, new AsyncCallback<User>(){
 				@Override
@@ -179,6 +238,12 @@ public class BoardPanel extends HorizontalPanel {
 				}
 		 });
 	}	
+	
+	/**
+	 * Gets the all subscriptions by user nickname.
+	 *
+	 * @return the all subscriptions by user nickname
+	 */
 	public void getAllSubscriptionsByUserNickname() {
 
 		User u = new User();
@@ -242,10 +307,6 @@ public class BoardPanel extends HorizontalPanel {
 																@Override
 																public void onFailure(
 																		Throwable caught) {
-																	// TODO
-																	// Auto-generated
-																	// method
-																	// stub
 
 																}
 
@@ -288,6 +349,11 @@ public class BoardPanel extends HorizontalPanel {
 
 	}
 
+	/**
+	 * Creates the subscription by user nickname.
+	 *
+	 * @param user the user
+	 */
 	public void createSubscriptionByUserNickname(User user) {
 		User u = new User();
 		u.setNickname(user.getNickname());
@@ -326,87 +392,12 @@ public class BoardPanel extends HorizontalPanel {
 
 	}
 
-//	public void createSubscriberInformations(int from_user_id) {
-//	 //Window.alert("ownBoard" + from_user_id);
-//		 AsyncObj.createSubscriberInformations(from_user_id, new AsyncCallback<ArrayList<User>>(){
-//			 
-//				@Override
-//				public void onFailure(Throwable caught) {
-//					Window.alert("dddddddddduhuh1")	;									
-//
-//				}
-//				@Override
-//				public void onSuccess(ArrayList<User>  result) {
-//					
-//					for (int i = 0; i < result.size(); i++) {
-//						
-//						String TempNIckname = result.get(i).getNickname();
-//						int TempUserID = result.get(i).getUserId();
-//						//Window.alert("tempid" + TempNIckname +""+TempUserID )	;	
-//				 
-//						 AsyncObj.getOneUserIdByID(TempUserID, new AsyncCallback<ArrayList<User>>(){
-//
-//							@Override
-//							public void onFailure(Throwable caught) {
-//								Window.alert("dddddddddduhuh2")	;									
-//								
-//							}
-//							
-//							@Override
-//							public void onSuccess(ArrayList<User> result) {
-//								
-//							 
-//								for (int i = 0; i < result.size(); i++) {
-//									Button AboDeleteBtn = new Button("d");
-//									AboDeleteBtn.setStylePrimaryName("PostDeleteBtn");
-//
-//									User a = new User();
-//									String nicknameTemp = result.get(i).getNickname();
-//									
-// 								 	final Integer TempUserID = result.get(i).getUserId();
-// 									// Window.alert(""+TempUserID )	;	
-//
-//								 	FlexTableTemp.setWidget(counter, 0, new Label( nicknameTemp));
-//									FlexTableTemp.setWidget(counter, 1,  AboDeleteBtn);
-//									
-//									FlexTableTemp.getFlexCellFormatter().setStyleName(counter,  0, "firstline_abo");
-//									FlexTableTemp.getFlexCellFormatter().setStyleName(counter,  1, "secoundline_abo");
-//									
-//									AboDeleteBtn.addClickHandler(new ClickHandler() {
-//									    public void onClick(ClickEvent event) {
-//												  
-//									    	AsyncObj.deleteSubscriberInformations(TempUserID, new AsyncCallback<Void>(){
-//
-//												@Override
-//												public void onFailure(Throwable caught) {
-//													Window.alert("dddddddddduhuh3")	;									
-//													 
-//												}
-//
-//												@Override
-//												public void onSuccess(Void result) {
-//														Window.alert("juhuh")	;									
-//												}
-//									    		
-//									    	});
-//									    	
-//									    }
-//									  });							
-//									
-//									counter++;								
-//
-//								}							
-//								
-//							}							 
-//							 
-//						 });
-//						
-//					}
-//
-//				}
-//		 }); 
-//	}
-//	
+ 
+	/**
+	 * Adds the row.
+	 *
+	 * @param report7table the report7table
+	 */
 	public void addRow(FlexTable report7table) {
 		 
 		         int numRows = report7table.getRowCount();
@@ -417,21 +408,39 @@ public class BoardPanel extends HorizontalPanel {
 		         report7table.setText(numRows, 4, "Item["+ numRows +", 2]");
 		     }
 		 
-		     public void deleteRow(FlexTable report7table) {
+		     /**
+     		 * Delete row.
+     		 *
+     		 * @param report7table the report7table
+     		 */
+     		public void deleteRow(FlexTable report7table) {
 		         int numRows = report7table.getRowCount();
 		         if (numRows > 1) {
 		        	 report7table.removeRow(numRows - 1);
 		         }
 		     }
 
-		     public int countRow(FlexTable report7table) {
+		     /**
+     		 * Count row.
+     		 *
+     		 * @param report7table the report7table
+     		 * @return the int
+     		 */
+     		public int countRow(FlexTable report7table) {
 		         int numRows = report7table.getRowCount();
 		         return numRows;
 		     }
 	 	  
 		     
 		     
-		     public FlexTable addNewTable(int counter, Post p) {
+		     /**
+     		 * Adds the new table.
+     		 *
+     		 * @param counter the counter
+     		 * @param p the p
+     		 * @return the flex table
+     		 */
+     		public FlexTable addNewTable(int counter, Post p) {
 		    	 
 		    	 
 		    	 
@@ -461,17 +470,14 @@ public class BoardPanel extends HorizontalPanel {
 					report7table.addStyleName("report7table");
 					
 				  	
-					 // report7table.setBorderWidth(1);
+				 
 						 report7table.getFlexCellFormatter().setStyleName(d,  0, "firstline0");
 						 report7table.getFlexCellFormatter().setStyleName(d,  1, "firstline1");
 						 report7table.getFlexCellFormatter().setStyleName(d,  2, "firstline2");
 						 report7table.getFlexCellFormatter().setStyleName(d,  3, "firstline3");
 						 report7table.getFlexCellFormatter().setStyleName(d,  4 , "firstline4");
-					//	 report7table.getFlexCellFormatter().setStyleName(d,  5, "firstline5");
-					//	 report7table.getFlexCellFormatter().setStyleName(d,  6, "firstline6");
-					//	 report7table.getFlexCellFormatter().setStyleName(d,  7, "firstline7");
 						 report7table.getFlexCellFormatter().setStyleName(d2, 0, "secoundline"); 
-						//boardcontent.add(report7table);
+					 
 				 
 						 
 					// scheisse 
@@ -483,11 +489,6 @@ public class BoardPanel extends HorizontalPanel {
 					  
 						 report7table.getFlexCellFormatter().setColSpan(d2, 0, 5); 
 						 report7table.setWidget(d2, 0,  new Label(p.getPost())); // von wem nickname und wann
-						
-						 
-						 
-						 
-						 
 						 
 
 						 AsyncObj.getAllCommentsByOnePostId(postID, new AsyncCallback<ArrayList<Comment>>() {
@@ -500,32 +501,15 @@ public class BoardPanel extends HorizontalPanel {
 									
 									
 									int itemp2 = 1;
-								
-									//addRow(report7table);
-									
 									if(result != null){	
-										
-										
-								
-									
-									//	 int i  = countRow(report7table);
-										
-										 	 
 
 										for (int j = 0; j <= result.size(); j++) {	
 											
 											int commendidTemp = result.get(j).getId();
-
-											//int comment_useridTemp = result.get(j).getId();
-											
 											if(j==0){
 												d3 = 2;
 												d4 = 3;
 											}else {
-											
-											
-											
-										 
 									//	VerticalPanel tableinner = new VerticalPanel();
 									 	Comment c = new Comment(); 
 										c.setUser_id(result.get(j).getUser_id());
@@ -537,42 +521,34 @@ public class BoardPanel extends HorizontalPanel {
 										report7table.setWidget(d3 , 2, new GetPostBarAuthor(authorID)  ) ;
 									 	report7table.setWidget(d3 , 3 ,  new Label(String.valueOf(result.get(j).getTimestamp())));
 
-									//	Window.alert(""+ commendidTemp + comment_useridTemp);
+							 
 										report7table.setWidget(d3 , 0, new Label());
 									 	report7table.setWidget(d3 , 4 ,  new CommentBarHandler(commendidTemp,commentIdTemp, ownuserID));
-
-									 	
-									 report7table.getFlexCellFormatter().setColSpan(d4, 1, 5); 
-								//	 report7table.getFlexCellFormatter().setStyleName(d4, 2, "secoundline_d3"); 
-									 report7table.setWidget(d4, 1,  new Label(result.get(j).getText() )); // von wem nickname und wann
+									 	report7table.getFlexCellFormatter().setColSpan(d4, 1, 5); 
+					 
+									 	report7table.setWidget(d4, 1,  new Label(result.get(j).getText() )); // von wem nickname und wann
 									
 									 
-			 
-						 report7table.getFlexCellFormatter().setStyleName(d3,  0, "firstline0_d3");
-						report7table.getFlexCellFormatter().setStyleName(d3,  1, "firstline1_d3");
-						report7table.getFlexCellFormatter().setStyleName(d3,  2, "firstline2_d3");
-						report7table.getFlexCellFormatter().setStyleName(d3,  3, "firstline3_d3");
-					 report7table.getFlexCellFormatter().setStyleName(d3,  4 , "firstline4_d3");
-						report7table.getFlexCellFormatter().setStyleName(d4,  0 , "secoundline_d3_b");	
-					 	report7table.getFlexCellFormatter().setStyleName(d4,  1 , "secoundline_d3");	
-					//	report7table.getFlexCellFormatter().setStyleName(d4,  1 , "secoundline_d3_b");	
+							 
+										report7table.getFlexCellFormatter().setStyleName(d3,  0, "firstline0_d3");
+										report7table.getFlexCellFormatter().setStyleName(d3,  1, "firstline1_d3");
+										report7table.getFlexCellFormatter().setStyleName(d3,  2, "firstline2_d3");
+										report7table.getFlexCellFormatter().setStyleName(d3,  3, "firstline3_d3");
+										report7table.getFlexCellFormatter().setStyleName(d3,  4 , "firstline4_d3");
+										report7table.getFlexCellFormatter().setStyleName(d4,  0 , "secoundline_d3_b");	
+									 	report7table.getFlexCellFormatter().setStyleName(d4,  1 , "secoundline_d3");	
+									//	report7table.getFlexCellFormatter().setStyleName(d4,  1 , "secoundline_d3_b");	
 			 
 						d3 +=2;
 							d4 +=2;
 											}
 					
-			 	//tableinner.add(report9table);
-	 
-						  
-						  //	d += 2; 
-						 	//d2 += 2; 	
+			 	 	
 					 	}  
 							
 									}		 
 									
 								 
-								// 	d = 1; 
-								//	 	d2 = 2;
 									
 									 
 									}   
@@ -584,95 +560,18 @@ public class BoardPanel extends HorizontalPanel {
 							
 						 
 						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-						 
-		 
-				 	// Window.alert(" was hat d  " +  d );
-
-				 //	d += 2; 
-			  //	d2 += 2;
 				return report7table; 
 			   	
-				// Window.alert(" was hat d2  " +  d );
-			 	
-				 
-				 
-		 
-				 
-			  	
-			  	
-			  	
-				//	Window.alert("A1 Spalte Postbar d " +d  +"  d2 "   +d2 );
-				   	
-					
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
-		    	 
 		    	 
 		    	 
 		    	 
 		     }
 		     
+		/**
+		 * Creates the bodard by nickname.
+		 *
+		 * @param cookienameTemp the cookiename temp
+		 */
 		public void createBodardByNickname(String cookienameTemp) {
 		// Window.alert("ownBoard" + cookienameTemp);
 			final String sessionEditor = Cookies.getCookie("SessionUserNicknameEditor");
@@ -695,13 +594,6 @@ public class BoardPanel extends HorizontalPanel {
   							
 						 	@Override
 							public void onSuccess(ArrayList<Post> result) {
-						 		 					 	
-						 	//	int d = 1;
-						 	//	int d2 = 2;
-						 		//int d3 = 3;
-						 		//int d4 = 4;
-						 		//int d3 = 0;
-							 
  									for (int i = 0; i < result.size(); i++) {
  										
  										
@@ -710,33 +602,9 @@ public class BoardPanel extends HorizontalPanel {
  										boardcontent.add(vP);
 
 									 
-									//	 authorNickname = ShowNickname(authorID);
-										 //d3 += 3; 									 
-										 
-										
-										// d4 += 2; 
+							 
 										 
  									}
- 									
- 									
- 								 
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
- 									
  									
  									
  									
@@ -758,6 +626,9 @@ public class BoardPanel extends HorizontalPanel {
 
 	// Constructor Nickname Private Variable 		
 	
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad(){
 		final String userSubscriptionCookie = Cookies
 				.getCookie("SelectedListItem");
@@ -793,16 +664,14 @@ public class BoardPanel extends HorizontalPanel {
  		report8table.setText(0, 4, "Aktions Buttons");
 	   
 		super.onLoad();
-	 
-//		 final int from_UserId = Integer.parseInt(Cookies.getCookie("SessionUserIDEditor"));
-		// Window.alert(""+from_UserId);
+ 
 		CreatePost a = new CreatePost();
 		rightVp.add(a);
- 		//rightVp.add(report8table);
+ 
  		rightVp.add(boardcontent);
  		createBodardByNickname(cookienameTemp);
 		createUserInformations(cookienameTemp);
-//		createSubscriberInformations(from_UserId);
+ 
 	
 	 	leftVpSubAboInfo.add(headlineAbo);
 		leftVpSubAboInfo.add(FlexTableTemp);

@@ -21,22 +21,41 @@ import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class CreatePost.
+ */
 public class CreatePost extends VerticalPanel {
 
 	// Definieren von ben�tigten Widgets
+	/** The submit post. */
 	private final Button submitPost = new Button("Absenden");
+	
+	/** The post. */
 	private final TextArea post = new TextArea();
- 	final Post NewInsertPost = new Post();
+ 	
+	 /** The New insert post. */
+	 final Post NewInsertPost = new Post();
+	
+	/** The selected nickname3. */
 	private  String selectedNickname3 = Cookies.getCookie("SelectedListItem");
 		 
+	/** The user_post_id. */
 	private int  user_post_id ;
 	// Wie kann man das hier bezeichnen?
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
+	
+	/** The p. */
 	private Post p;
 	//private String getCookieUser;
 
+	/** The vert panel. */
 	private final VerticalPanel vertPanel = new VerticalPanel();
 
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad() {
 		//getCookieUser = Cookies.getCookie("SessionUserNickname");
 
@@ -53,13 +72,7 @@ public class CreatePost extends VerticalPanel {
 		HeadlineAllAll2.setText(headline);
 		// Widgets dem Panel zuordnen
 		vertPanel.add(post);
-		
-		//RootPanel.get("content_wrap").add(vertPanel);
-		//System.out.println(getCookieUser);
-		
-		// Dem RootPanel ein Panel und einen Button zuordnen
-		// (Muss noch angepasst werden, da wir am Schluss noch mehr Funktionen
-		// haben)
+ 
 		
 		submitPost.setStylePrimaryName("postnowbox_submit_button");
 		

@@ -7,14 +7,29 @@ import java.sql.Statement;
 import hdm.itprojekt.Socialmediapinnwand.server.db.DBConnection;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoginMapper.
+ */
 public class LoginMapper {
 	
+/** The login mapper. */
 private static LoginMapper loginMapper = null;
+
+/** The con. */
 public Connection con = DBConnection.connection();
 
+/**
+ * Instantiates a new login mapper.
+ */
 protected LoginMapper() {
 }
 
+/**
+ * Login mapper.
+ *
+ * @return the login mapper
+ */
 public static LoginMapper loginMapper() {
 	if (loginMapper == null) {
 		loginMapper = new LoginMapper();
@@ -22,6 +37,13 @@ public static LoginMapper loginMapper() {
 	return loginMapper;
 }
 
+/**
+ * Check login.
+ *
+ * @param nicknameBoxUser the nickname box user
+ * @param pwBoxUser the pw box user
+ * @return the user
+ */
 public User checkLogin (String nicknameBoxUser, String pwBoxUser) {
 	Connection con = DBConnection.connection();
 	User u = new User();

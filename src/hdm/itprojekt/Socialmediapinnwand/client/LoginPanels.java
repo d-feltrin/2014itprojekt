@@ -20,19 +20,41 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LoginPanels.
+ */
 public class LoginPanels extends HorizontalPanel {
 
+/**
+ * The Class LoginEditor.
+ */
 public class LoginEditor extends HorizontalPanel {
+	
+	/** The nickname box. */
 	final TextBox nicknameBox = new TextBox();
+	
+	/** The pw box. */
 	final PasswordTextBox pwBox = new PasswordTextBox();
+	
+	/** The Login button. */
 	final Button LoginButton = new Button("Login Editor");
+	
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
 
+	/** The login box. */
 	private final HorizontalPanel loginBox = new HorizontalPanel();
  
+	/**
+	 * Instantiates a new login editor.
+	 */
 	public LoginEditor() {
 	}
 
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad() {
 	 
 		LoginButton.setStylePrimaryName("LoginButtonEditor");
@@ -122,15 +144,26 @@ public class LoginEditor extends HorizontalPanel {
 	}
 }
 
+/**
+ * The Class LoginReport.
+ */
 public class LoginReport extends HorizontalPanel {
 
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
 
+	/** The login box. */
 	private final HorizontalPanel loginBox = new HorizontalPanel();
 	
+	/**
+	 * Instantiates a new login report.
+	 */
 	public LoginReport() {
 	}
 
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad() {
 		final TextBox nicknameBox = new TextBox();
 		final PasswordTextBox pwBox = new PasswordTextBox();
@@ -188,23 +221,47 @@ public class LoginReport extends HorizontalPanel {
 	}
 }
 
+/**
+ * The Class LoginDasboard.
+ */
 public class LoginDasboard extends HorizontalPanel {
+	
+	/** The v p2. */
 	HorizontalPanel vP2 = new HorizontalPanel();
+	
+	/** The v p. */
 	HorizontalPanel vP = new HorizontalPanel();
 	
+	/** The v editor. */
 	VerticalPanel vEditor = new VerticalPanel();
+	
+	/** The v editor headline. */
 	final Label vEditorHeadline = new Label("Login Editor-Client");
+	
+	/** The v editor subline. */
 	final Label vEditorSubline = new Label("Mit dem Editor-Client können Sie unter anderem Freunde abbnonieren, Beitr�ge schreiben und diese komentieren ");
 	
+	/** The v report. */
 	VerticalPanel vReport = new VerticalPanel();
+	
+	/** The v report headline. */
 	final Label vReportHeadline = new Label("Login Report-Client");
+	
+	/** The v report subline. */
 	final Label vReportSubline = new Label("Mit dem Report-Client können Sie unter anderem Statistiken anzeigen lassen, zum Beispiel wie viele Abboneten Sie haben. ");
 	
+    /** The image. */
     final Image image = new Image();
+    
+    /** The welcome. */
     final Label welcome = new Label( "Willkommen");
 	
- 	final Button RegisterButton = new Button("User Registrieren");
+ 	/** The Register button. */
+	 final Button RegisterButton = new Button("User Registrieren");
 
+	/* (non-Javadoc)
+	 * @see com.google.gwt.user.client.ui.Widget#onLoad()
+	 */
 	public void onLoad(){
 		
 	    image.setUrl("http://pressespecial.de/itpimg/PeteA.jpg");

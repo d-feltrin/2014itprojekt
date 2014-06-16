@@ -10,14 +10,30 @@ import java.util.Vector;
 import hdm.itprojekt.Socialmediapinnwand.server.db.DBConnection;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class SubscriptionMapper.
+ */
 public class SubscriptionMapper {
+	
+	/** The sub mapper. */
 	private static SubscriptionMapper subMapper = null;
+	
+	/** The con. */
 	public Connection con = DBConnection.connection();
 
+	/**
+	 * Instantiates a new subscription mapper.
+	 */
 	protected SubscriptionMapper() {
 		
 	}
 
+	/**
+	 * Sub mapper.
+	 *
+	 * @return the subscription mapper
+	 */
 	public static SubscriptionMapper subMapper() {
 		if (subMapper == null) {
 			subMapper = new SubscriptionMapper();
@@ -25,6 +41,12 @@ public class SubscriptionMapper {
 		return subMapper;
 	}
 
+	/**
+	 * Insert post.
+	 *
+	 * @param p the p
+	 * @param userPostId the user post id
+	 */
 	public void insertPost(Post p, int userPostId) {
 		Connection con = DBConnection.connection();
 		try {
@@ -38,6 +60,11 @@ public class SubscriptionMapper {
 		}
 	}
 
+	/**
+	 * Creates the subscription by user id.
+	 *
+	 * @param s the s
+	 */
 	public void createSubscriptionByUserId(Subscription s) {
 		Connection con = DBConnection.connection();
 		try {
@@ -51,6 +78,12 @@ public class SubscriptionMapper {
 		}
 	}
 
+	/**
+	 * Check subscription.
+	 *
+	 * @param s the s
+	 * @return the subscription
+	 */
 	public Subscription CheckSubscription(Subscription s) {
 
 		Subscription sp = new Subscription();
@@ -76,6 +109,12 @@ public class SubscriptionMapper {
 
 	}
 
+	/**
+	 * Gets the all subscriptions by id.
+	 *
+	 * @param sub the sub
+	 * @return the all subscriptions by id
+	 */
 	public ArrayList<Subscription> getAllSubscriptionsById(Subscription sub) {
 		Connection con = DBConnection.connection();
 		ArrayList<Subscription> result = new ArrayList<>();
@@ -106,6 +145,12 @@ public class SubscriptionMapper {
 		return result;
 	}
 
+	/**
+	 * Delete subscription by subscription id.
+	 *
+	 * @param s the s
+	 * @return the subscription
+	 */
 	public Subscription deleteSubscriptionBySubscriptionID(Subscription s) {
 
 		Connection con = DBConnection.connection();

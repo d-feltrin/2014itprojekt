@@ -22,16 +22,33 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
  
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GetPostBarAuthor.
+ */
 public class GetPostBarAuthor extends Composite  {
 	
+	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
 
+	/** The author id. */
 	private int authorID; 
+	
+	/** The author nickname. */
 	String authorNickname;
- 	Label authorPanel = new Label();
- 	private FlowPanel authorPanel1 = new FlowPanel();
  	
- 	public GetPostBarAuthor(int authorID) {
+	 /** The author panel. */
+	 Label authorPanel = new Label();
+ 	
+	 /** The author panel1. */
+	 private FlowPanel authorPanel1 = new FlowPanel();
+ 	
+ 	/**
+	  * Instantiates a new gets the post bar author.
+	  *
+	  * @param authorID the author id
+	  */
+	 public GetPostBarAuthor(int authorID) {
 		 
 		AsyncObj.getOneNicknameFromUserId(authorID, new  AsyncCallback<User>(){
 			

@@ -13,13 +13,29 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import com.google.gwt.user.client.Window;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BoardMapper.
+ */
 public class BoardMapper {
+	
+	/** The board mapper. */
 	private static BoardMapper boardMapper = null;
+	
+	/** The con. */
 	public Connection con = DBConnection.connection();
 
+	/**
+	 * Instantiates a new board mapper.
+	 */
 	protected BoardMapper() {
 	}
 
+	/**
+	 * Board mapper.
+	 *
+	 * @return the board mapper
+	 */
 	public static BoardMapper boardMapper() {
 		if (boardMapper == null) {
 			boardMapper = new BoardMapper();
@@ -27,6 +43,11 @@ public class BoardMapper {
 		return boardMapper;
 	}
 	
+	/**
+	 * Delete subscriber informations.
+	 *
+	 * @param id the id
+	 */
 	public void deleteSubscriberInformations(int id) {
 		Connection con = DBConnection.connection();
  		try {
@@ -38,6 +59,12 @@ public class BoardMapper {
 		}
  	}
 	
+	/**
+	 * Gets the one user id by id.
+	 *
+	 * @param id the id
+	 * @return the one user id by id
+	 */
 	public  ArrayList<User> getOneUserIdByID  (int id) {
 
 		Connection con = DBConnection.connection();
@@ -63,6 +90,12 @@ public class BoardMapper {
 		return resultList;
 	}
 	
+	/**
+	 * Creates the subscriber informations.
+	 *
+	 * @param id the id
+	 * @return the array list
+	 */
 	public ArrayList<User> createSubscriberInformations(int id) {
 		Connection con = DBConnection.connection();
 		ArrayList<User> resultUserList = new ArrayList<>();

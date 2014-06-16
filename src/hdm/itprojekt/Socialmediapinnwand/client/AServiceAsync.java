@@ -108,6 +108,8 @@ public interface AServiceAsync {
 
 	void getPostsByUserId(int userid, AsyncCallback<Integer> asyncCallback);
 
+	void getPostCountByUserId(int userId, AsyncCallback<Integer> asyncCallback);
+
 	// void deleteUser(DeleteUser u, AsyncCallback<Void> asyncCallback);
 
 }

@@ -165,28 +165,24 @@ public ArrayList<Comment> getAllCommentsByOnePostId(int postid) {
 
 	return resultList;
 }
-
 public int getPostCountByUserId(int user_id) {
-
 	Connection con = DBConnection.connection();
 	int postCounter = 0;
 	try {
 		Statement state = con.createStatement();
 		ResultSet rs = state
-				.executeQuery("SELECT COUNT(`id`) FROM `Post` WHERE `poster_id` = "
-						+ user_id); // User Npro Zeile �bergeben;
-		//user_id
+				.executeQuery("SELECT COUNT(`id`) FROM `Post` WHERE `poster_id` = '"
+						+ user_id + "'");
 		while (rs.next()) {
 
 			postCounter = rs.getInt(1);
-
 		}
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
 	return postCounter;
- 
 }
+
 
 public int getSubscriptionCountByUserId(int user_id) {
 

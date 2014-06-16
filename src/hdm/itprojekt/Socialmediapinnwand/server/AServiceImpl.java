@@ -17,6 +17,10 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 public class AServiceImpl extends RemoteServiceServlet implements AService {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private UserMapper uMapper = null;
 	private PostMapper pMapper = null;
 	private LoginMapper lMapper = null;
@@ -356,6 +360,13 @@ public class AServiceImpl extends RemoteServiceServlet implements AService {
 		init();
 		sMapper.deleteSubscriptionBySubscriptionID(s);
 
+	}
+
+	@Override
+	public int getPostCountByUserId(int user_id) {
+		init();
+		int postCount = pMapper.getPostCountByUserId(user_id);
+		return postCount;
 	}
 
 	/*@Override

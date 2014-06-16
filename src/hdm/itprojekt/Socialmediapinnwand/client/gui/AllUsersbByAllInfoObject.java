@@ -38,16 +38,15 @@ public class AllUsersbByAllInfoObject extends VerticalPanel {
 	final Label commentVpHeadline = new Label("Meisten Kommentare");
 	final Label commentVpSubline = new Label(
 			"In diesem Ranking werden Ihnen die User sortiert angezeigt, die am Meisten Beiträge verfasst haben. ");
-	int firstRow;
+
 	final FlexTable report1Table = new FlexTable();
 	final FlexTable report2Table = new FlexTable();
 	final FlexTable report3Table = new FlexTable();
 	final FlexTable report4Table = new FlexTable();
-	private User u = new User();
+	private Integer firstRow1 = 1;
 	private Integer zaehlerFlexTable1 = 1;
+	private User u = new User();
 
-	int userid_count_posts;
-	User ua = new User();
 	private Integer zaehlerFlexTable2 = 1;
 	private Integer zaehlerFlexTable3 = 1;
 	private Integer zaehlerFlexTable4 = 1;
@@ -58,7 +57,7 @@ public class AllUsersbByAllInfoObject extends VerticalPanel {
 
 		postVp.add(postVpHeadline);
 		postVp.add(postVpSubline);
-		postVp.add(report1Table);
+		
 
 		aboVp.add(aboVpHeadline);
 		aboVp.add(aboVpSubline);
@@ -72,8 +71,8 @@ public class AllUsersbByAllInfoObject extends VerticalPanel {
 		likesVp.add(likeVpSubline);
 		likesVp.add(report4Table);
 
-		// CommentsVp.add(report1Table);
-		// likesVp.add(report1Table);
+		 CommentsVp.add(report1Table);
+		 likesVp.add(report1Table);
 
 		loadTableAllUserAllPosts();
 		// loadTableAllUserAllSubscription ();
@@ -101,6 +100,7 @@ public class AllUsersbByAllInfoObject extends VerticalPanel {
 		postVp.setStylePrimaryName("postVp");
 		CommentsVp.setStylePrimaryName("CommentsVp");
 		likesVp.setStylePrimaryName("likesVp");
+		postVp.add(report1Table);
 
 		reportHoriPanel1Tab.setStylePrimaryName("reportHoriPanel1Tab");
 
@@ -108,227 +108,65 @@ public class AllUsersbByAllInfoObject extends VerticalPanel {
 		report2Table.addStyleName("report2Table");
 		report3Table.addStyleName("report3Table");
 		report4Table.addStyleName("report4Table");
-		// report1Table.getRowFormatter().addStyleName(0,"FlexTable-Header");
 
 		RootPanel.get("content_wrap").add(reportHoriPanel1Tab);
 
-		/*
-		 * vEditor.setStylePrimaryName("LoginPanelLeft");
-		 * vReport.setStylePrimaryName("LoginPanelRight");
-		 * 
-		 * 
-		 * vEditorHeadline.addStyleName("LoginHeadlineEditor");
-		 * vReportHeadline.addStyleName("LoginHeadlineReport");
-		 * 
-		 * vEditorSubline.addStyleName("LoginSublineEditor");
-		 * vReportSubline.addStyleName("LoginSublineReport");
-		 */
 	}
 
 	public void loadTableAllUserAllPosts() {
 
-		final ArrayList<String> report1ArrayList = new ArrayList<String>();
+		// final ArrayList<String> report1ArrayList = new ArrayList<String>();
 		AsyncObj.getAllUsers(new AsyncCallback<ArrayList<User>>() {
-			// int firstRowSPL = 1;
+
+			
+			
+			
+
 			@Override
 			public void onSuccess(ArrayList<User> result) {
-				// report1Table.remove(report1Table);
+				
 
-				firstRow = 1;
-				zaehlerFlexTable1 = 1;
-				// zaehlerFlexTable1 = firstRow;
-
-				zaehlerFlexTable1 = 1;
+				report1Table.setText(0, 0, "Nickname");
+				report1Table.setText(0, 1, "Anzahl Beiträge");
+				
+				int firstRow = 1;
 				for (int i = 0; i < result.size(); i++) {
-
-					// Window.alert(getPostsCountByUserId(result.get(i).getUserId())
-					// + "" + result.get(i).getUserId());
-					User ua = new User();
-					ua.setNickname(result.get(i).getNickname());
-					ua.setUserId(result.get(i).getUserId());
-					int userid = ua.getUserId();
-					AsyncObj.getPostsByUserId(userid,
+					u = result.get(i);
+					report1Table.setText(firstRow, 0,u.getNickname());
+					
+					
+					
+					AsyncObj.getPostCountByUserId(result.get(i).getUserId(),
+							
 							new AsyncCallback<Integer>() {
 
 								@Override
-								public void onFailure(Throwable caught) {
-									Window.alert("Fehler bei der Abfrage");
+								public void onSuccess(Integer result) {
+									report1Table.setText(firstRow1, 1, String.valueOf(result)
+											+ " Beitr�ge");
+									firstRow1++;
 								}
 
 								@Override
-								public void onSuccess(Integer result) {
-
-									userid_count_posts = result;
+								public void onFailure(Throwable caught) {
+									// TODO Auto-generated method stub
 
 								}
+								
 							});
-
-					report1Table.setText(0, 0, "Nickname");
-					report1Table.setText(0, 1, "Anzahl Beiträge");
-
-					report1Table.setWidget(firstRow, 0,
-							new Label(ua.getNickname()));
-					report1Table.setWidget(firstRow, 1, new Label(
-							+userid_count_posts+"Beiträge"));
-
+					
 					firstRow++;
-					// u.setUserId(result.get(i).getUserId()) ;
 
-					// Window.alert(""+result.get(i).getUserId());
-
-				}
-
-			}
+				}}
 
 			@Override
 			public void onFailure(Throwable caught) {
-				Window.alert("Konnte keine User finden");
-
+				// TODO Auto-generated method stub
+				
 			}
+		
+		
 		});
-
+		this.add(report1Table);
 	}
-
-	public int getPostsCountByUserId(int userid) {
-
-		AsyncObj.getPostsByUserId(userid, new AsyncCallback<Integer>() {
-
-			@Override
-			public void onFailure(Throwable caught) {
-				Window.alert("Fehler bei der Abfrage");
-			}
-
-			@Override
-			public void onSuccess(Integer result) {
-
-				int res = (int) result;
-
-				Window.alert("" + res);
-				userid_count_posts = result;
-
-			}
-		});
-
-		return userid_count_posts;
-	}
-
-	/*
-	 * public void loadTableAllUserAllSubscription(){
-	 * 
-	 * final ArrayList<String> report1ArrayList = new ArrayList<String>();
-	 * AsyncObj.getAllUsers( new AsyncCallback<ArrayList<User>>() { //int
-	 * firstRowSPL = 1;
-	 * 
-	 * @Override public void onSuccess(ArrayList<User> result) {
-	 * //report1Table.remove(report1Table); if (result != null) { int firstRow =
-	 * 1; report2Table.setText(0, 0, "Nickname"); report2Table.setText(0, 1,
-	 * "Anzahl Abos"); for (int i = 0; i < result.size() ; i++) {
-	 * 
-	 * User reportUser = result.get(i);
-	 * 
-	 * AsyncObj.getSubscriptionByUserId ( reportUser.getUserId(), new
-	 * AsyncCallback<Integer>() {
-	 * 
-	 * @Override public void onFailure(Throwable caught) {
-	 * 
-	 * }
-	 * 
-	 * @Override public void onSuccess(Integer result) {
-	 * report2Table.setWidget(zaehlerFlexTable2, 1, new Label(
-	 * String.valueOf(result))); zaehlerFlexTable2 ++; } });
-	 * 
-	 * report2Table.setWidget(firstRow, 0, new Label(result.get(i).
-	 * getNickname()));
-	 * 
-	 * firstRow++; } }
-	 * 
-	 * }
-	 * 
-	 * @Override public void onFailure(Throwable caught) {
-	 * Window.alert("Konnte keine User finden");
-	 * 
-	 * } });
-	 * 
-	 * }
-	 */
-	/*
-	 * public void loadTableAllUserComments (){
-	 * 
-	 * final ArrayList<String> report1ArrayList = new ArrayList<String>();
-	 * AsyncObj.getAllUsers( new AsyncCallback<ArrayList<User>>() { //int
-	 * firstRowSPL = 1;
-	 * 
-	 * @Override public void onSuccess(ArrayList<User> result) {
-	 * //report1Table.remove(report1Table); if (result != null) { int firstRow =
-	 * 1; report3Table.setText(0, 0, "Nickname"); report3Table.setText(0, 1,
-	 * "Anzahl Kommentare"); for (int i = 0; i < result.size() ; i++) {
-	 * 
-	 * User reportUser = result.get(i);
-	 * 
-	 * AsyncObj.getCommentsByUserId( reportUser.getUserId(), new
-	 * AsyncCallback<Integer>() {
-	 * 
-	 * @Override public void onFailure(Throwable caught) {
-	 * 
-	 * }
-	 * 
-	 * @Override public void onSuccess(Integer result) {
-	 * report2Table.setWidget(zaehlerFlexTable3, 1, new Label(
-	 * String.valueOf(result))); zaehlerFlexTable3 ++; } });
-	 * 
-	 * report3Table.setWidget(firstRow, 0, new Label(result.get(i).
-	 * getNickname()));
-	 * 
-	 * firstRow++; } }
-	 * 
-	 * }
-	 * 
-	 * @Override public void onFailure(Throwable caught) {
-	 * Window.alert("Konnte keine User finden");
-	 * 
-	 * } });
-	 * 
-	 * }
-	 */
-
-	/*
-	 * public void loadTableAllUserAllLikes (){
-	 * 
-	 * final ArrayList<String> report1ArrayList = new ArrayList<String>();
-	 * AsyncObj.getAllUsers( new AsyncCallback<ArrayList<User>>() { //int
-	 * firstRowSPL = 1;
-	 * 
-	 * @Override public void onSuccess(ArrayList<User> result) {
-	 * //report1Table.remove(report1Table); if (result != null) { firstRow = 1;
-	 * report4Table.setText(0, 0, "Nickname"); report4Table.setText(0, 1,
-	 * "Anzahl Abos"); for (int i = 0; i < result.size() ; i++) {
-	 * 
-	 * User reportUser = result.get(i);
-	 * 
-	 * AsyncObj.getLikesByUserId( reportUser.getUserId(), new
-	 * AsyncCallback<Integer>() {
-	 * 
-	 * @Override public void onFailure(Throwable caught) {
-	 * 
-	 * }
-	 * 
-	 * @Override public void onSuccess(Integer result) {
-	 * report2Table.setWidget(zaehlerFlexTable4, 1, new Label(
-	 * String.valueOf(result))); zaehlerFlexTable4 ++; } });
-	 * 
-	 * report4Table.setWidget(firstRow, 0, new Label(result.get(i).
-	 * getNickname()));
-	 * 
-	 * firstRow++; } }
-	 * 
-	 * }
-	 * 
-	 * @Override public void onFailure(Throwable caught) {
-	 * Window.alert("Konnte keine User finden");
-	 * 
-	 * } });
-	 * 
-	 * }
-	 */
-
 }

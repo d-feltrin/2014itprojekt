@@ -101,6 +101,8 @@ public interface AService extends RemoteService {
 
 	int getPostsByUserId(int userid);
 
+	int getPostCountByUserId(int userId);
+
  
 
 	//void deleteUser(DeleteUser u, AsyncCallback<Void> asyncCallback);

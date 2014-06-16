@@ -12,7 +12,7 @@ public class User extends BusinessObject {
 	private String password;
 	private int user_id;
 	private int anzahlFremderAbonnenten;
-	
+	private int user_count;
 	/*Diese Methode wird aus der Superklasse BusinessObject geerbt (siehe @override)
 	*wird hier nicht �berschrieben, da die Methode genau die gleiche bleibt
 	*Muss sie hier dann �berhaupt reingeschrieben werden?*/
@@ -86,6 +86,14 @@ public class User extends BusinessObject {
 	//Methode, um die Anzahl fremder Pinnwand-Abonnenten zu erhalten
 	public int getAnzahlFremderAbonnenten(){
 		return anzahlFremderAbonnenten;
+	}
+
+	public int getUserCount() {
+		return user_count;
+	}
+
+	public void setUserCount(int user_count) {
+		this.user_count = user_count;
 	}
 
 }

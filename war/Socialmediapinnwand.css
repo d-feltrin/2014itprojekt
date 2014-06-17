@@ -74,7 +74,7 @@ width: 210px;border: 1px solid #ccc;
    }
  
  .leftVpBoard{height:100%; min-height:500px;
-width: 205px;
+width: 205px;firstline2
  background:#fff; margin-right:5px; padding-left:30px;
    }
  
@@ -252,7 +252,7 @@ position:relative;
 
   .firstline0 { font-weight:bold; text-align:center; background:#000 ! Important;  width:15px;  }
    .firstline1 {padding-left:8px; width:200px; color:#000; font-weight:bold;  }
-    .firstline2 {min-width:15px; max-height:150px; font-size:10px !Important;  }
+    .firstline2 { width:15px; max-height:150px; font-size:10px !Important;  }
      .firstline3 { width:30px;  }
       .firstline4 {width:100px;  }
        .firstline5 {width:30px;  }

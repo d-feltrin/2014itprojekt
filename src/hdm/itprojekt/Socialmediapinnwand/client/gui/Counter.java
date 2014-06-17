@@ -67,6 +67,8 @@ public class Counter extends FlowPanel{
 
 /** The p. */
 private Post p = new Post();
+
+int Iterator = 2; 
  
  
 
@@ -85,23 +87,38 @@ private Post p = new Post();
 	 * @param p the p
 	 * @return the all posts by date intervall
 	 */
-	public FlexTable getAllPostsByDateIntervall( ArrayList<Post> p){
-		
+	public FlexTable getAllPostsByDateIntervall( ArrayList<Post> p, int posterid){
+		report5Table.setText(0, 0, "Anzahl Kommentare");
+		report5Table.setText(0, 1, "Anzahl Beiträge");
+		report5Table.setText(0, 2, "Anzahl Abonnements");
 		
 		for (int i = 0; i < p.size(); i++) {
+		 Window.alert(p.get(i).getPosr_id() + " " + posterid +" - " );
+			
+			if ( p.get(i).getPosr_id() == posterid){
+			
+				report5Table.setWidget(i+1 , 0, new Label( String.valueOf(p.get(i).getPosr_id()) ) );
+				report5Table.setWidget(i+1 , 2, new Label( String.valueOf(p.get(i).getTimestamp()) ) );
+				report5Table.setWidget(i+1 , 1, new Label( String.valueOf(p.get(i).getPost()) ) );
+				
+				Iterator++;
+			} 
 			
 			
-			
-			
-			report5Table.setWidget(i , 1, new Label( String.valueOf(p.get(i).getPosr_id()) ) );
-			report5Table.setWidget(i , 1, new Label( String.valueOf(p.get(i).getTimestamp()) ) );
-			report5Table.setWidget(i , 1, new Label( String.valueOf(p.get(i).getPost()) ) );
 			
 			
 		}
 		
+		int rowCount = report5Table.getRowCount();
 		
-		
+	/*	if(rowCount==0){
+			
+			Window.alert("Der Nuter hat keine Beiträge in diesem Zeitraum veröffentlich");
+		}else {
+		report5Table.getFlexCellFormatter().setColSpan(1, 0, 2); 
+		report5Table.setWidget(1, 0,  new Label( String.valueOf(rowCount))   );
+		report5Table.setWidget(1, 2,  new Label( "Beiträge")   );
+		}*/
  
 		return report5Table;
 		
@@ -126,7 +143,7 @@ private Post p = new Post();
 		
 			public void onSuccess(Integer result) {
 				
-				   report1Table.setWidget(0 , 1, new Label( "Beitrag" ) );
+				   report1Table.setWidget(0 , 1, new Label( "Beiträge" ) );
 				   report1Table.setWidget(0 , 0, new Label("Nickname" ) ); 
 			   report1Table.setWidget(zaehlerFlexTable1 , 1, new Label(result +" " ) );
 			   report1Table.setWidget(zaehlerFlexTable1 , 0, new Label(nickname ) ); 
@@ -190,7 +207,7 @@ public FlexTable getSubscriptionsByUserId( int userid3,   final String nickname3
 	
 		public void onSuccess(Integer result) {
 			
-			   report3Table.setWidget(0 , 1, new Label( "Likes" ) );
+			   report3Table.setWidget(0 , 1, new Label( "Abos" ) );
 			   report3Table.setWidget(0 , 0, new Label("Nickname" ) ); 
 		   report3Table.setWidget(zaehlerFlexTable1 , 1, new Label(result +" " ) );
 		   report3Table.setWidget(zaehlerFlexTable1 , 0, new Label(nickname3 ) ); 
@@ -221,7 +238,7 @@ public FlexTable getCommentsByUserId( int userid4,   final String nickname4){
 	
 		public void onSuccess(Integer result) {
 			
-			   report4Table.setWidget(0 , 1, new Label( "Kommentar " ) );
+			   report4Table.setWidget(0 , 1, new Label( "Kommentare " ) );
 			   report4Table.setWidget(0 , 0, new Label("Nickname" ) ); 
 		   report4Table.setWidget(zaehlerFlexTable1 , 1, new Label(result +" " ) );
 		   report4Table.setWidget(zaehlerFlexTable1 , 0, new Label(nickname4 ) ); 

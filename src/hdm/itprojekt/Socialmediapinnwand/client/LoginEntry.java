@@ -262,7 +262,7 @@ public class LoginEntry extends AbsolutePanel {
 			MenuBar UserMainMenuBtn = new MenuBar(true);
 			UserMainMenuBtn.addItem("Alle Statistiken", allstat);
 			UserMainMenuBtn.addItem("View 1: Rankinglisten", rankstat);
-			UserMainMenuBtn.addItem("View 1: Rankinglisten", userstat);
+			UserMainMenuBtn.addItem("View 2: Userstatistik nach Zeit", userstat);
 			UserMainMenuBtn.addItem("Logout", logout);
 
 			MenuBar UserMainMenu = new MenuBar();

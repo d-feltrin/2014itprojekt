@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import hdm.itprojekt.Socialmediapinnwand.client.AService;
 import hdm.itprojekt.Socialmediapinnwand.client.AServiceAsync;
 import hdm.itprojekt.Socialmediapinnwand.client.CreateUser;
+import hdm.itprojekt.Socialmediapinnwand.client.LoginPanels;
+import hdm.itprojekt.Socialmediapinnwand.client.LoginPanels.LoginDasboard;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.BusinessObject;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.OwnStringObject;
 import hdm.itprojekt.Socialmediapinnwand.shared.bo.Post;
@@ -72,9 +74,7 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 	/** The report5 table. */
 	final FlexTable report5Table = new FlexTable();
 	
-	/** The time stamp table. */
-	final FlexTable timeStampTable = new FlexTable();
-	
+ 
 	/** The like table. */
 	final FlexTable likeTable = new FlexTable();
 
@@ -87,6 +87,11 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 	/** The List of nicknames. */
 	ListBox ListOfNicknames = new ListBox();
 	
+	String fromDate, toDate; 
+	  String selectedNickname;
+		 Label datePickerLabel2 = new Label();
+private int user_idTEMP2;
+		 Label datePickerLabel1 = new Label();
 	/**
 	 * Instantiates a new one user by one info objects.
 	 */
@@ -102,13 +107,11 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 		reportVertPanel1Tab.add(report2Headline);
 		reportVertPanel1Tab.add(ListOfNicknames);
 
-		final Label datePickerLabel1 = new Label();
 		reportVertPanel1Tab.add(datePickerLabel1);
 
 		DatePicker datePickerFrom = new DatePicker();
 		reportVertPanel1Tab.add(datePickerFrom);
 
-		final Label datePickerLabel2 = new Label();
 		reportVertPanel1Tab.add(datePickerLabel2);
 
 		DatePicker datePickerTo = new DatePicker();
@@ -125,7 +128,7 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 		reportHorPanelRight.add(reportVertPanelRightOne);
 		reportHorPanelRight.add(reportVertPanelRightTwo);
 
-		reportVertPanelRightOne.add(timeStampTable);
+	 
 		reportVertPanelRightTwo.add(likeTable);
 
 		reportVertPanel1Tab.setStylePrimaryName("OneOneReportVpanel1");
@@ -163,11 +166,7 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 		ListOfNicknames.addStyleName("ListOfNicknames2");
 		ListOfNicknames.getSelectedIndex();
 
-		reportVertPanelRightOne.add(timeStampTable);
-
-		timeStampTable.setText(0, 0, "Anzahl Kommentare");
-		timeStampTable.setText(0, 1, "Anzahl Beiträge");
-		timeStampTable.setText(0, 2, "Anzahl Abonnements");
+ 
 
 		likeTable.setText(0, 0, "Anzahl Likes");
 
@@ -193,7 +192,7 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 					public void ShowUserFromSelectedItem( ListBox listOfNicknames, int selectedIndex) {
 						// TODO Auto-generated method stub
 
-						String selectedNickname;
+						
 						selectedNickname = listOfNicknames
 								.getItemText(selectedIndex);
 
@@ -202,49 +201,30 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 									@Override
 									public void onSuccess(User result) {
 										
-										if(datePickerLabel1.getText().isEmpty()  | datePickerLabel2.getText().isEmpty() ){
-											
-											Window.alert("Bitte geben Sie ein Von-Datum und ein Bis-Datum ein");
-											
-										}else{
+										
 										  user_idTEMP = result.getUserId();
-											String fromDate, toDate; 
+									
 											fromDate = datePickerLabel1.getText();
 											toDate = datePickerLabel2.getText();
- 
-								 		AsyncObj.getAllPostsByDateIntervall( user_idTEMP, fromDate, toDate,  new AsyncCallback<ArrayList<Post>>() {
-													@Override
-													public void onFailure(
-															Throwable caught) {
-
-													}
-
-												 
-
-													@Override
-													public void onSuccess(
-															ArrayList<Post> result) {
-														ArrayList<Post> pA = new ArrayList<Post>();
-														for (int i = 0; i < result.size(); i++) {
-															
-															HorizontalPanel hP = new HorizontalPanel();
-															
-															
-															if(result.get(i).getPosr_id().equals(user_idTEMP)){
-																
-																
-																  Post p = new Post();
-																  p = result.get(i);
-																  pA.add(p);
-																  Counter a = new Counter();
-																  hP.add(a.getAllPostsByDateIntervall(pA));
-																  reportVertPanelRightTwo.add(hP);
-															}
-															}
-														}
-													}); 
-												}
+								
+											
 										
+
+											generateReport2Btn.addClickHandler(new ClickHandler() {
+												  
+												public void onClick(ClickEvent event) {
+														
+											
+													genrateOneUserView(user_idTEMP, fromDate, toDate);
+ 
+								 	
+								 		
+													}
+											});
+								 		
+								 		
+								 		
+												 
 										}
 
 									@Override
@@ -252,7 +232,7 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 										// TODO Auto-generated method stub
 										
 									} 
-										
+	
 										
 						}); 
 					  
@@ -275,4 +255,54 @@ public class OneUserByOneInfoObjects extends VerticalPanel implements
 			}});
 
 	}
+	
+	public void genrateOneUserView(int user_idTEMP, String fromDate, String toDate ){
+		
+				String startI = "User auswählen";
+				if(datePickerLabel1.getText().isEmpty()  | datePickerLabel2.getText().isEmpty()   ){
+					
+					Window.alert("Bitte geben Sie ein Von-Datum und ein Bis-Datum ein");
+					
+				}else{
+
+					user_idTEMP2 = user_idTEMP;
+				
+				
+				AsyncObj.getAllPostsByDateIntervall( user_idTEMP, fromDate, toDate,  new AsyncCallback<ArrayList<Post>>() {
+					@Override
+					public void onFailure(
+							Throwable caught) {
+						  Window.alert("bbbb");
+
+						  reportVertPanel2Tab.add(new Label("avv"));
+					}
+					@Override
+					public void onSuccess(
+							ArrayList<Post> result) {
+						//ArrayList<Post> pA = new ArrayList<Post>();
+								
+							VerticalPanel vP = new VerticalPanel();
+						//	
+						//	if(result.get(i).getPosr_id().equals(user_idTEMP)){
+								
+								//  Post p = new Post();
+								//  p = result.get(i);
+								//  pA.add(p);
+								  Counter a = new Counter();
+								  vP.add(a.getAllPostsByDateIntervall(result, user_idTEMP2));
+								  reportVertPanel2Tab.clear(); 
+								  reportVertPanel2Tab.add(vP);
+								//  Window.alert("s"+a);
+							
+						//	}
+							 
+						}
+					}); 
+				
+				}
+				
+				 
+			
+	}
+	
 }

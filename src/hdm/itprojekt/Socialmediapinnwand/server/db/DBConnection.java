@@ -26,9 +26,8 @@ public class DBConnection {
 			 
 			try {
 				DriverManager.registerDriver(new AppEngineDriver());
-			 
-				// con = DriverManager.getConnection("jdbc:mysql://81.169.219.51:3306/it_projekt_bj2", "it_projekt_bj2", "it_projekt_bj2");
-				con = DriverManager.getConnection("jdbc:google:rdbms://sm4shdm:hdmit3/sm4s", "sm4s", "root");
+			   con = DriverManager.getConnection("jdbc:mysql://81.169.219.51:3306/it_projekt_bj2", "it_projekt_bj2", "it_projekt_bj2");
+				//con = DriverManager.getConnection("jdbc:google:rdbms://sm4shdm:hdmit3/sm4s", "sm4s", "root");
 				
  			} 
 			

@@ -25,13 +25,28 @@ public class ReportOverview extends VerticalPanel {
 		HeadlineBar hB2 = new HeadlineBar();
 		//hB2.setHeadlineInHeadlineBar("Alle Statistiken");
 		HeadlinesAllUserAllInfoO HeadlineAllAll = hB2.new HeadlinesAllUserAllInfoO();
+		
+		
+		HeadlineBar hB3 = new HeadlineBar();
+		//hB2.setHeadlineInHeadlineBar("Alle Statistiken");
+		HeadlinesAllUserAllInfoO HeadlineAllAll2 = hB3.new HeadlinesAllUserAllInfoO();
 
-		OneUserByOneInfoObjects View1 = new OneUserByOneInfoObjects();
-		AllUsersbByAllInfoObject View2 = new AllUsersbByAllInfoObject();
+		OneUserByOneInfoObjects View2 = new OneUserByOneInfoObjects();
+		AllUsersbByAllInfoObject View1 = new AllUsersbByAllInfoObject();
 		
 		RootPanel.get("content_wrap").add(HeadlinesBarReport);
 		RootPanel.get("content_wrap").add(HeadlineAllAll);
+		RootPanel.get("content_wrap").add(View1);
+		
+		
+ 
+		RootPanel.get("content_wrap").add(HeadlineAllAll2);
 		RootPanel.get("content_wrap").add(View2);
+		
+		
+		
+		
+		
 		
 	}
 	

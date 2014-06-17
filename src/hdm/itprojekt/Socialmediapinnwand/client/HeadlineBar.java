@@ -26,7 +26,7 @@ public class HeadlineBar  extends VerticalPanel {
 	Label labelRight = new Label();
 	
 	/** The labelheadtoplist. */
-	Label labelheadtoplist = new Label("Toplisten");
+	Label labelheadtoplist = new Label("Ranking");
 
 	/**
 	 * Sets the headline in headline bar.

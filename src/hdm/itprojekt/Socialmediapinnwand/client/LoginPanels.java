@@ -38,7 +38,7 @@ public class LoginEditor extends HorizontalPanel {
 	final PasswordTextBox pwBox = new PasswordTextBox();
 	
 	/** The Login button. */
-	final Button LoginButton = new Button("Login Report");
+	final Button LoginButton = new Button("Login Editor");
 	
 	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
@@ -167,7 +167,7 @@ public class LoginReport extends HorizontalPanel {
 	public void onLoad() {
 		final TextBox nicknameBox = new TextBox();
 		final PasswordTextBox pwBox = new PasswordTextBox();
-		final Button LoginButton = new Button("Login Editor");
+		final Button LoginButton = new Button("Login Report");
 		LoginButton.setStylePrimaryName("LoginButtonReport");
 		nicknameBox.setText("Nickname");
 		pwBox.setText("Password");
@@ -236,19 +236,19 @@ public class LoginDasboard extends HorizontalPanel {
 	VerticalPanel vEditor = new VerticalPanel();
 	
 	/** The v editor headline. */
-	final Label vEditorHeadline = new Label("Login Editor-Client");
+	final Label vEditorHeadline = new Label("Login Report-Client");
 	
 	/** The v editor subline. */
-	final Label vEditorSubline = new Label("Mit dem Editor-Client können Sie unter anderem Freunde abbnonieren, Beitr�ge schreiben und diese komentieren ");
+	final Label vEditorSubline = new Label("Mit dem Editor-Client können Sie unter anderem Freunde abonnieren, Beiträge schreiben und diese kommentieren.");
 	
 	/** The v report. */
 	VerticalPanel vReport = new VerticalPanel();
 	
 	/** The v report headline. */
-	final Label vReportHeadline = new Label("Login Report-Client");
+	final Label vReportHeadline = new Label("Login Editor-Client");
 	
 	/** The v report subline. */
-	final Label vReportSubline = new Label("Mit dem Report-Client können Sie unter anderem Statistiken anzeigen lassen, zum Beispiel wie viele Abboneten Sie haben. ");
+	final Label vReportSubline = new Label("Mit dem Report-Client können Sie Statistiken anzeigen lassen, zum Beispiel wie viele Abonnenten Sie haben.");
 	
     /** The image. */
     final Image image = new Image();

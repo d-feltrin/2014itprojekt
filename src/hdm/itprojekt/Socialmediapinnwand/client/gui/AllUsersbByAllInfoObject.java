@@ -43,28 +43,28 @@ public class AllUsersbByAllInfoObject extends VerticalPanel{
 		final VerticalPanel likesVp = new VerticalPanel();
 		
 		/** The post vp headline. */
-		final Label postVpHeadline = new Label("2Meisten Beiträge");
+		final Label postVpHeadline = new Label("Meiste Beiträge");
 		
 		/** The post vp subline. */
-		final Label postVpSubline = new Label("In diesem Ranking werden Ihnen die User sortiert angezeigt, die am Meisten Beiträge verfasst haben. ");
+		final Label postVpSubline = new Label("In diesem Ranking werden Ihnen die Nicknames aller User angezeigt und die Anzahl ihrer Beiträge.");
 		
 		/** The abo vp headline. */
-		final Label aboVpHeadline = new Label("Meisten Abos");
+		final Label aboVpHeadline = new Label("Meiste Abos");
 		
 		/** The abo vp subline. */
-		final Label aboVpSubline = new Label("In diesem Ranking werden Ihnen die User sortiert angezeigt, die am Meisten Beiträge verfasst haben. ");
+		final Label aboVpSubline = new Label("In diesem Ranking werden Ihnen die Nicknames aller User angezeigt und die Anzahl ihrer Abonnements.");
 		
 		/** The like vp headline. */
-		final Label likeVpHeadline = new Label("Meisten Likes");
+		final Label likeVpHeadline = new Label("Meiste Likes");
 		
 		/** The like vp subline. */
-		final Label likeVpSubline = new Label("In diesem Ranking werden Ihnen die User sortiert angezeigt, die am Meisten Beiträge verfasst haben. ");
+		final Label likeVpSubline = new Label("In diesem Ranking werden Ihnen die Nicknames aller User angezeigt und die Anzahl ihrer Likes.");
 		
 		/** The comment vp headline. */
-		final Label commentVpHeadline = new Label("Meisten Kommentare");
+		final Label commentVpHeadline = new Label("Meiste Kommentare");
 		
 		/** The comment vp subline. */
-		final Label commentVpSubline = new Label("In diesem Ranking werden Ihnen die User sortiert angezeigt, die am Meisten Beiträge verfasst haben. ");
+		final Label commentVpSubline = new Label("In diesem Ranking werden Ihnen die Nicknames aller User angezeigt und die Anzahl ihrer Kommentare.");
 		
 		/** The first row. */
 		int firstRow;
@@ -344,158 +344,6 @@ public class AllUsersbByAllInfoObject extends VerticalPanel{
 		
 		
 		
-		
-	 
 		 
-		/*
-		public void loadTableAllUserAllSubscription(){
-			 
- 			final ArrayList<String> report1ArrayList = new ArrayList<String>();
-			AsyncObj.getAllUsers(  new AsyncCallback<ArrayList<User>>() {
-				//int firstRowSPL = 1;
-				@Override
-				public void onSuccess(ArrayList<User> result) {
-					//report1Table.remove(report1Table);
-					if (result != null) {
-					int firstRow = 1;
-					report2Table.setText(0, 0, "Nickname");
-					report2Table.setText(0, 1, "Anzahl Abos");
-					for (int i = 0; i < result.size()  ; i++) {
-						
-						User reportUser = result.get(i);
-						
-						AsyncObj.getSubscriptionByUserId (
-								reportUser.getUserId(),
-								new AsyncCallback<Integer>() {
-									@Override
-									public void onFailure(Throwable caught) {
-
-									}
-
-									@Override
-									public void onSuccess(Integer result) {
-										report2Table.setWidget(zaehlerFlexTable2, 1, new Label(
-												String.valueOf(result)));
-										zaehlerFlexTable2 ++;
-									}
-								});
-		 
-						report2Table.setWidget(firstRow, 0, new Label(result.get(i). getNickname()));
-					 
-						firstRow++;
-						}
-					}
-										
-				}
-
-				@Override
-				public void onFailure(Throwable caught) {
-					Window.alert("Konnte keine User finden");
-
-				}
-			});
-
-		}
-		*/ 
-		/*
-		public void loadTableAllUserComments (){
-			 
- 			final ArrayList<String> report1ArrayList = new ArrayList<String>();
-			AsyncObj.getAllUsers(  new AsyncCallback<ArrayList<User>>() {
-				//int firstRowSPL = 1;
-				@Override
-				public void onSuccess(ArrayList<User> result) {
-					//report1Table.remove(report1Table);
-					if (result != null) {
-					int firstRow = 1;
-					report3Table.setText(0, 0, "Nickname");
-					report3Table.setText(0, 1, "Anzahl Kommentare");
-					for (int i = 0; i < result.size()  ; i++) {
-						
-						User reportUser = result.get(i);
-						
-						AsyncObj.getCommentsByUserId(
-								reportUser.getUserId(),
-								new AsyncCallback<Integer>() {
-									@Override
-									public void onFailure(Throwable caught) {
-
-									}
-
-									@Override
-									public void onSuccess(Integer result) {
-										report2Table.setWidget(zaehlerFlexTable3, 1, new Label(
-												String.valueOf(result)));
-										zaehlerFlexTable3 ++;
-									}
-								});
-		 
-						report3Table.setWidget(firstRow, 0, new Label(result.get(i). getNickname()));
-					 
-						firstRow++;
-						}
-					}
-										
-				}
-
-				@Override
-				public void onFailure(Throwable caught) {
-					Window.alert("Konnte keine User finden");
-
-				}
-			});
-
-		}
-		*/
-		
-		/*
-		public void loadTableAllUserAllLikes (){
-			 
- 			final ArrayList<String> report1ArrayList = new ArrayList<String>();
-			AsyncObj.getAllUsers(  new AsyncCallback<ArrayList<User>>() {
-				//int firstRowSPL = 1;
-				@Override
-				public void onSuccess(ArrayList<User> result) {
-					//report1Table.remove(report1Table);
-					if (result != null) {
-						firstRow = 1;
-					report4Table.setText(0, 0, "Nickname");
-					report4Table.setText(0, 1, "Anzahl Abos");
-					for (int i = 0; i < result.size()  ; i++) {
-						
-						User reportUser = result.get(i);
-						
-						AsyncObj.getLikesByUserId(
-								reportUser.getUserId(),
-								new AsyncCallback<Integer>() {
-									@Override
-									public void onFailure(Throwable caught) {
-
-									}
-
-									@Override
-									public void onSuccess(Integer result) {
-										report2Table.setWidget(zaehlerFlexTable4, 1, new Label(
-												String.valueOf(result)));
-										zaehlerFlexTable4 ++;
-									} 
-								});
-		 
-						report4Table.setWidget(firstRow, 0, new Label(result.get(i). getNickname()));
-					 
-						firstRow++;
-						}
-					}
-										
-				}
-
-				@Override
-				public void onFailure(Throwable caught) {
-					Window.alert("Konnte keine User finden");
-
-				}
-			});
-
-		}*/
 		
 }

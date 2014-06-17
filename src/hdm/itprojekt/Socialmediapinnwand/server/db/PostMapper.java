@@ -83,11 +83,15 @@ public ArrayList<Post> getAllPostsByDateIntervall(int userid,String fromDate,Str
 	Connection con = DBConnection.connection();
 	ArrayList<Post> resultList = new ArrayList<>();
 	
+	String a= "2006-05";
+
+	String b= "2014-08";
+	
 	try {
 		Statement state = con.createStatement();
 		//ResultSet result = state.executeQuery("SELECT  *  FROM `Post` WHERE `user_id` = "+ id  ); 
  
-		ResultSet result = state.executeQuery("SELECT  *  FROM `Post` WHERE `date` >= '"+ fromDate  +"' AND `date` <="+ toDate); 
+		ResultSet result = state.executeQuery("SELECT  *  FROM `Post` WHERE `date` >= '"+ fromDate  +"' AND `date` <= '"+ toDate +"' ;"        ); 
 		
 		
 		while (result.next()) {

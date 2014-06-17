@@ -23,8 +23,7 @@ public class DBConnection {
 		if (con == null) {
 			
 			//Der Treiber f�r die DB-Verbindung wird erstellt
-			//(Wieso wird jedesmal ein neuer Treiber erstellt? Muss doch eigentlich nur darauf
-			//referenzieren oder?)
+			 
 			try {
 				DriverManager.registerDriver(new AppEngineDriver());
 			 

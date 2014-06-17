@@ -38,7 +38,7 @@ public class LoginEditor extends HorizontalPanel {
 	final PasswordTextBox pwBox = new PasswordTextBox();
 	
 	/** The Login button. */
-	final Button LoginButton = new Button("Login Editor");
+	final Button LoginButton = new Button("Login Report");
 	
 	/** The Async obj. */
 	private final AServiceAsync AsyncObj = GWT.create(AService.class);
@@ -167,7 +167,7 @@ public class LoginReport extends HorizontalPanel {
 	public void onLoad() {
 		final TextBox nicknameBox = new TextBox();
 		final PasswordTextBox pwBox = new PasswordTextBox();
-		final Button LoginButton = new Button("Login Report");
+		final Button LoginButton = new Button("Login Editor");
 		LoginButton.setStylePrimaryName("LoginButtonReport");
 		nicknameBox.setText("Nickname");
 		pwBox.setText("Password");
